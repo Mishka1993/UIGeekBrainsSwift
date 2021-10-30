@@ -1,13 +1,13 @@
 //
-//  KirzhnerVKUITestsLaunchTests.swift
-//  KirzhnerVKUITests
+//  VKUITestsLaunchTests.swift
+//  VKUITests
 //
-//  Created by Екатерина on 25.10.2021.
+//  Created by Екатерина on 30.10.2021.
 //
 
 import XCTest
 
-class WeatherUITestsLaunchTests: XCTestCase {
+class VKUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

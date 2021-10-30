@@ -7,70 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8421F1DF2726E45900B5B84E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421F1DE2726E45900B5B84E /* AppDelegate.swift */; };
-		8421F1E12726E45900B5B84E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421F1E02726E45900B5B84E /* SceneDelegate.swift */; };
-		8421F1E32726E45900B5B84E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421F1E22726E45900B5B84E /* ViewController.swift */; };
-		8421F1E62726E45900B5B84E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8421F1E42726E45900B5B84E /* Main.storyboard */; };
-		8421F1E82726E45C00B5B84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8421F1E72726E45C00B5B84E /* Assets.xcassets */; };
-		8421F1EB2726E45C00B5B84E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8421F1E92726E45C00B5B84E /* LaunchScreen.storyboard */; };
-		8421F1F62726E45C00B5B84E /* KirzhnerVKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421F1F52726E45C00B5B84E /* KirzhnerVKTests.swift */; };
-		8421F2002726E45C00B5B84E /* KirzhnerVKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421F1FF2726E45C00B5B84E /* KirzhnerVKUITests.swift */; };
-		8421F2022726E45C00B5B84E /* KirzhnerVKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421F2012726E45C00B5B84E /* KirzhnerVKUITestsLaunchTests.swift */; };
-		84282F1F272AED5800237C45 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84282F1E272AED5800237C45 /* LoginFormController.swift */; };
-		84F8D173272B26CA00214401 /* Vk_Logo.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F8D172272B26CA00214401 /* Vk_Logo.svg.png */; };
+		84813954272DB7E400BF4056 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84813953272DB7E400BF4056 /* UIExtension.swift */; };
+		84988B0B272DA24C000129EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84988B0A272DA24C000129EE /* AppDelegate.swift */; };
+		84988B0D272DA24C000129EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84988B0C272DA24C000129EE /* SceneDelegate.swift */; };
+		84988B0F272DA24C000129EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84988B0E272DA24C000129EE /* ViewController.swift */; };
+		84988B12272DA24C000129EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84988B10272DA24C000129EE /* Main.storyboard */; };
+		84988B14272DA24F000129EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84988B13272DA24F000129EE /* Assets.xcassets */; };
+		84988B17272DA24F000129EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84988B15272DA24F000129EE /* LaunchScreen.storyboard */; };
+		84988B22272DA24F000129EE /* VKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84988B21272DA24F000129EE /* VKTests.swift */; };
+		84988B2C272DA24F000129EE /* VKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84988B2B272DA24F000129EE /* VKUITests.swift */; };
+		84988B2E272DA24F000129EE /* VKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84988B2D272DA24F000129EE /* VKUITestsLaunchTests.swift */; };
+		84988B3B272DA272000129EE /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84988B3A272DA272000129EE /* LoginFormController.swift */; };
+		84988B43272DA4B8000129EE /* VK_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84988B42272DA4B8000129EE /* VK_logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8421F1F22726E45C00B5B84E /* PBXContainerItemProxy */ = {
+		84988B1E272DA24F000129EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8421F1D32726E45900B5B84E /* Project object */;
+			containerPortal = 84988AFF272DA24C000129EE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8421F1DA2726E45900B5B84E;
-			remoteInfo = Weather;
+			remoteGlobalIDString = 84988B06272DA24C000129EE;
+			remoteInfo = VK;
 		};
-		8421F1FC2726E45C00B5B84E /* PBXContainerItemProxy */ = {
+		84988B28272DA24F000129EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8421F1D32726E45900B5B84E /* Project object */;
+			containerPortal = 84988AFF272DA24C000129EE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8421F1DA2726E45900B5B84E;
-			remoteInfo = Weather;
+			remoteGlobalIDString = 84988B06272DA24C000129EE;
+			remoteInfo = VK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8421F1DB2726E45900B5B84E /* KirzhnerVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KirzhnerVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8421F1DE2726E45900B5B84E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8421F1E02726E45900B5B84E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8421F1E22726E45900B5B84E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8421F1E52726E45900B5B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8421F1E72726E45C00B5B84E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8421F1EA2726E45C00B5B84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8421F1EC2726E45C00B5B84E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8421F1F12726E45C00B5B84E /* KirzhnerVKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KirzhnerVKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8421F1F52726E45C00B5B84E /* KirzhnerVKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KirzhnerVKTests.swift; sourceTree = "<group>"; };
-		8421F1FB2726E45C00B5B84E /* KirzhnerVKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KirzhnerVKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8421F1FF2726E45C00B5B84E /* KirzhnerVKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KirzhnerVKUITests.swift; sourceTree = "<group>"; };
-		8421F2012726E45C00B5B84E /* KirzhnerVKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KirzhnerVKUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		84282F1E272AED5800237C45 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
-		84F8D172272B26CA00214401 /* Vk_Logo.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vk_Logo.svg.png; sourceTree = "<group>"; };
+		84813953272DB7E400BF4056 /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
+		84988B07272DA24C000129EE /* VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84988B0A272DA24C000129EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84988B0C272DA24C000129EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84988B0E272DA24C000129EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84988B11272DA24C000129EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84988B13272DA24F000129EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84988B16272DA24F000129EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84988B18272DA24F000129EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84988B1D272DA24F000129EE /* VKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84988B21272DA24F000129EE /* VKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKTests.swift; sourceTree = "<group>"; };
+		84988B27272DA24F000129EE /* VKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84988B2B272DA24F000129EE /* VKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKUITests.swift; sourceTree = "<group>"; };
+		84988B2D272DA24F000129EE /* VKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84988B3A272DA272000129EE /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		84988B42272DA4B8000129EE /* VK_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VK_logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8421F1D82726E45900B5B84E /* Frameworks */ = {
+		84988B04272DA24C000129EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8421F1EE2726E45C00B5B84E /* Frameworks */ = {
+		84988B1A272DA24F000129EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8421F1F82726E45C00B5B84E /* Frameworks */ = {
+		84988B24272DA24F000129EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,139 +82,164 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8421F1D22726E45900B5B84E = {
+		84988AFE272DA24C000129EE = {
 			isa = PBXGroup;
 			children = (
-				8421F1DD2726E45900B5B84E /* KirzhnerVK */,
-				8421F1F42726E45C00B5B84E /* KirzhnerVKTests */,
-				8421F1FE2726E45C00B5B84E /* KirzhnerVKUITests */,
-				8421F1DC2726E45900B5B84E /* Products */,
+				84988B09272DA24C000129EE /* VK */,
+				84988B20272DA24F000129EE /* VKTests */,
+				84988B2A272DA24F000129EE /* VKUITests */,
+				84988B08272DA24C000129EE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8421F1DC2726E45900B5B84E /* Products */ = {
+		84988B08272DA24C000129EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8421F1DB2726E45900B5B84E /* KirzhnerVK.app */,
-				8421F1F12726E45C00B5B84E /* KirzhnerVKTests.xctest */,
-				8421F1FB2726E45C00B5B84E /* KirzhnerVKUITests.xctest */,
+				84988B07272DA24C000129EE /* VK.app */,
+				84988B1D272DA24F000129EE /* VKTests.xctest */,
+				84988B27272DA24F000129EE /* VKUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8421F1DD2726E45900B5B84E /* KirzhnerVK */ = {
+		84988B09272DA24C000129EE /* VK */ = {
 			isa = PBXGroup;
 			children = (
-				8421F1DE2726E45900B5B84E /* AppDelegate.swift */,
-				8421F1E02726E45900B5B84E /* SceneDelegate.swift */,
-				8421F1E22726E45900B5B84E /* ViewController.swift */,
-				8421F1E42726E45900B5B84E /* Main.storyboard */,
-				8421F1E72726E45C00B5B84E /* Assets.xcassets */,
-				8421F1E92726E45C00B5B84E /* LaunchScreen.storyboard */,
-				8421F1EC2726E45C00B5B84E /* Info.plist */,
-				84F8D172272B26CA00214401 /* Vk_Logo.svg.png */,
-				84282F1E272AED5800237C45 /* LoginFormController.swift */,
+				84988B44272DA4FB000129EE /* ViewController */,
+				84988B3E272DA2B6000129EE /* Assets */,
+				84988B0A272DA24C000129EE /* AppDelegate.swift */,
+				84988B0C272DA24C000129EE /* SceneDelegate.swift */,
+				84988B10272DA24C000129EE /* Main.storyboard */,
+				84988B13272DA24F000129EE /* Assets.xcassets */,
+				84988B15272DA24F000129EE /* LaunchScreen.storyboard */,
+				84988B18272DA24F000129EE /* Info.plist */,
 			);
-			path = KirzhnerVK;
+			path = VK;
 			sourceTree = "<group>";
 		};
-		8421F1F42726E45C00B5B84E /* KirzhnerVKTests */ = {
+		84988B20272DA24F000129EE /* VKTests */ = {
 			isa = PBXGroup;
 			children = (
-				8421F1F52726E45C00B5B84E /* KirzhnerVKTests.swift */,
+				84988B21272DA24F000129EE /* VKTests.swift */,
 			);
-			path = KirzhnerVKTests;
+			path = VKTests;
 			sourceTree = "<group>";
 		};
-		8421F1FE2726E45C00B5B84E /* KirzhnerVKUITests */ = {
+		84988B2A272DA24F000129EE /* VKUITests */ = {
 			isa = PBXGroup;
 			children = (
-				8421F1FF2726E45C00B5B84E /* KirzhnerVKUITests.swift */,
-				8421F2012726E45C00B5B84E /* KirzhnerVKUITestsLaunchTests.swift */,
+				84988B2B272DA24F000129EE /* VKUITests.swift */,
+				84988B2D272DA24F000129EE /* VKUITestsLaunchTests.swift */,
 			);
-			path = KirzhnerVKUITests;
+			path = VKUITests;
+			sourceTree = "<group>";
+		};
+		84988B3E272DA2B6000129EE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				84988B3F272DA2C5000129EE /* Logo */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		84988B3F272DA2C5000129EE /* Logo */ = {
+			isa = PBXGroup;
+			children = (
+				84988B42272DA4B8000129EE /* VK_logo.png */,
+			);
+			path = Logo;
+			sourceTree = "<group>";
+		};
+		84988B44272DA4FB000129EE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84988B3A272DA272000129EE /* LoginFormController.swift */,
+				84813953272DB7E400BF4056 /* UIExtension.swift */,
+				84988B0E272DA24C000129EE /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8421F1DA2726E45900B5B84E /* KirzhnerVK */ = {
+		84988B06272DA24C000129EE /* VK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8421F2052726E45C00B5B84E /* Build configuration list for PBXNativeTarget "KirzhnerVK" */;
+			buildConfigurationList = 84988B31272DA24F000129EE /* Build configuration list for PBXNativeTarget "VK" */;
 			buildPhases = (
-				8421F1D72726E45900B5B84E /* Sources */,
-				8421F1D82726E45900B5B84E /* Frameworks */,
-				8421F1D92726E45900B5B84E /* Resources */,
+				84988B03272DA24C000129EE /* Sources */,
+				84988B04272DA24C000129EE /* Frameworks */,
+				84988B05272DA24C000129EE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = KirzhnerVK;
-			productName = Weather;
-			productReference = 8421F1DB2726E45900B5B84E /* KirzhnerVK.app */;
+			name = VK;
+			productName = VK;
+			productReference = 84988B07272DA24C000129EE /* VK.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8421F1F02726E45C00B5B84E /* KirzhnerVKTests */ = {
+		84988B1C272DA24F000129EE /* VKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8421F2082726E45C00B5B84E /* Build configuration list for PBXNativeTarget "KirzhnerVKTests" */;
+			buildConfigurationList = 84988B34272DA24F000129EE /* Build configuration list for PBXNativeTarget "VKTests" */;
 			buildPhases = (
-				8421F1ED2726E45C00B5B84E /* Sources */,
-				8421F1EE2726E45C00B5B84E /* Frameworks */,
-				8421F1EF2726E45C00B5B84E /* Resources */,
+				84988B19272DA24F000129EE /* Sources */,
+				84988B1A272DA24F000129EE /* Frameworks */,
+				84988B1B272DA24F000129EE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8421F1F32726E45C00B5B84E /* PBXTargetDependency */,
+				84988B1F272DA24F000129EE /* PBXTargetDependency */,
 			);
-			name = KirzhnerVKTests;
-			productName = WeatherTests;
-			productReference = 8421F1F12726E45C00B5B84E /* KirzhnerVKTests.xctest */;
+			name = VKTests;
+			productName = VKTests;
+			productReference = 84988B1D272DA24F000129EE /* VKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8421F1FA2726E45C00B5B84E /* KirzhnerVKUITests */ = {
+		84988B26272DA24F000129EE /* VKUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8421F20B2726E45C00B5B84E /* Build configuration list for PBXNativeTarget "KirzhnerVKUITests" */;
+			buildConfigurationList = 84988B37272DA24F000129EE /* Build configuration list for PBXNativeTarget "VKUITests" */;
 			buildPhases = (
-				8421F1F72726E45C00B5B84E /* Sources */,
-				8421F1F82726E45C00B5B84E /* Frameworks */,
-				8421F1F92726E45C00B5B84E /* Resources */,
+				84988B23272DA24F000129EE /* Sources */,
+				84988B24272DA24F000129EE /* Frameworks */,
+				84988B25272DA24F000129EE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8421F1FD2726E45C00B5B84E /* PBXTargetDependency */,
+				84988B29272DA24F000129EE /* PBXTargetDependency */,
 			);
-			name = KirzhnerVKUITests;
-			productName = WeatherUITests;
-			productReference = 8421F1FB2726E45C00B5B84E /* KirzhnerVKUITests.xctest */;
+			name = VKUITests;
+			productName = VKUITests;
+			productReference = 84988B27272DA24F000129EE /* VKUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8421F1D32726E45900B5B84E /* Project object */ = {
+		84988AFF272DA24C000129EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
-					8421F1DA2726E45900B5B84E = {
-						CreatedOnToolsVersion = 13.0;
+					84988B06272DA24C000129EE = {
+						CreatedOnToolsVersion = 13.1;
 					};
-					8421F1F02726E45C00B5B84E = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 8421F1DA2726E45900B5B84E;
+					84988B1C272DA24F000129EE = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 84988B06272DA24C000129EE;
 					};
-					8421F1FA2726E45C00B5B84E = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 8421F1DA2726E45900B5B84E;
+					84988B26272DA24F000129EE = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 84988B06272DA24C000129EE;
 					};
 				};
 			};
-			buildConfigurationList = 8421F1D62726E45900B5B84E /* Build configuration list for PBXProject "KirzhnerVK" */;
+			buildConfigurationList = 84988B02272DA24C000129EE /* Build configuration list for PBXProject "VK" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,38 +247,38 @@
 				en,
 				Base,
 			);
-			mainGroup = 8421F1D22726E45900B5B84E;
-			productRefGroup = 8421F1DC2726E45900B5B84E /* Products */;
+			mainGroup = 84988AFE272DA24C000129EE;
+			productRefGroup = 84988B08272DA24C000129EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8421F1DA2726E45900B5B84E /* KirzhnerVK */,
-				8421F1F02726E45C00B5B84E /* KirzhnerVKTests */,
-				8421F1FA2726E45C00B5B84E /* KirzhnerVKUITests */,
+				84988B06272DA24C000129EE /* VK */,
+				84988B1C272DA24F000129EE /* VKTests */,
+				84988B26272DA24F000129EE /* VKUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8421F1D92726E45900B5B84E /* Resources */ = {
+		84988B05272DA24C000129EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8421F1EB2726E45C00B5B84E /* LaunchScreen.storyboard in Resources */,
-				84F8D173272B26CA00214401 /* Vk_Logo.svg.png in Resources */,
-				8421F1E82726E45C00B5B84E /* Assets.xcassets in Resources */,
-				8421F1E62726E45900B5B84E /* Main.storyboard in Resources */,
+				84988B17272DA24F000129EE /* LaunchScreen.storyboard in Resources */,
+				84988B14272DA24F000129EE /* Assets.xcassets in Resources */,
+				84988B12272DA24C000129EE /* Main.storyboard in Resources */,
+				84988B43272DA4B8000129EE /* VK_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8421F1EF2726E45C00B5B84E /* Resources */ = {
+		84988B1B272DA24F000129EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8421F1F92726E45C00B5B84E /* Resources */ = {
+		84988B25272DA24F000129EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,62 +288,63 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8421F1D72726E45900B5B84E /* Sources */ = {
+		84988B03272DA24C000129EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8421F1E32726E45900B5B84E /* ViewController.swift in Sources */,
-				84282F1F272AED5800237C45 /* LoginFormController.swift in Sources */,
-				8421F1DF2726E45900B5B84E /* AppDelegate.swift in Sources */,
-				8421F1E12726E45900B5B84E /* SceneDelegate.swift in Sources */,
+				84988B0F272DA24C000129EE /* ViewController.swift in Sources */,
+				84988B3B272DA272000129EE /* LoginFormController.swift in Sources */,
+				84988B0B272DA24C000129EE /* AppDelegate.swift in Sources */,
+				84813954272DB7E400BF4056 /* UIExtension.swift in Sources */,
+				84988B0D272DA24C000129EE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8421F1ED2726E45C00B5B84E /* Sources */ = {
+		84988B19272DA24F000129EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8421F1F62726E45C00B5B84E /* KirzhnerVKTests.swift in Sources */,
+				84988B22272DA24F000129EE /* VKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8421F1F72726E45C00B5B84E /* Sources */ = {
+		84988B23272DA24F000129EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8421F2002726E45C00B5B84E /* KirzhnerVKUITests.swift in Sources */,
-				8421F2022726E45C00B5B84E /* KirzhnerVKUITestsLaunchTests.swift in Sources */,
+				84988B2C272DA24F000129EE /* VKUITests.swift in Sources */,
+				84988B2E272DA24F000129EE /* VKUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8421F1F32726E45C00B5B84E /* PBXTargetDependency */ = {
+		84988B1F272DA24F000129EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8421F1DA2726E45900B5B84E /* KirzhnerVK */;
-			targetProxy = 8421F1F22726E45C00B5B84E /* PBXContainerItemProxy */;
+			target = 84988B06272DA24C000129EE /* VK */;
+			targetProxy = 84988B1E272DA24F000129EE /* PBXContainerItemProxy */;
 		};
-		8421F1FD2726E45C00B5B84E /* PBXTargetDependency */ = {
+		84988B29272DA24F000129EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8421F1DA2726E45900B5B84E /* KirzhnerVK */;
-			targetProxy = 8421F1FC2726E45C00B5B84E /* PBXContainerItemProxy */;
+			target = 84988B06272DA24C000129EE /* VK */;
+			targetProxy = 84988B28272DA24F000129EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8421F1E42726E45900B5B84E /* Main.storyboard */ = {
+		84988B10272DA24C000129EE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8421F1E52726E45900B5B84E /* Base */,
+				84988B11272DA24C000129EE /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		8421F1E92726E45C00B5B84E /* LaunchScreen.storyboard */ = {
+		84988B15272DA24F000129EE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8421F1EA2726E45C00B5B84E /* Base */,
+				84988B16272DA24F000129EE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -324,7 +352,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8421F2032726E45C00B5B84E /* Debug */ = {
+		84988B2F272DA24F000129EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -385,7 +413,7 @@
 			};
 			name = Debug;
 		};
-		8421F2042726E45C00B5B84E /* Release */ = {
+		84988B30272DA24F000129EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -440,7 +468,7 @@
 			};
 			name = Release;
 		};
-		8421F2062726E45C00B5B84E /* Debug */ = {
+		84988B32272DA24F000129EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -448,7 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KirzhnerVK/Info.plist;
+				INFOPLIST_FILE = VK/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -459,7 +487,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.Weather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.VK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -467,7 +495,7 @@
 			};
 			name = Debug;
 		};
-		8421F2072726E45C00B5B84E /* Release */ = {
+		84988B33272DA24F000129EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -475,7 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KirzhnerVK/Info.plist;
+				INFOPLIST_FILE = VK/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -486,7 +514,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.Weather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.VK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -494,7 +522,7 @@
 			};
 			name = Release;
 		};
-		8421F2092726E45C00B5B84E /* Debug */ = {
+		84988B35272DA24F000129EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -509,16 +537,16 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.WeatherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.VKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KirzhnerVK.app/KirzhnerVK";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VK.app/VK";
 			};
 			name = Debug;
 		};
-		8421F20A2726E45C00B5B84E /* Release */ = {
+		84988B36272DA24F000129EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -533,16 +561,16 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.WeatherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.VKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KirzhnerVK.app/KirzhnerVK";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VK.app/VK";
 			};
 			name = Release;
 		};
-		8421F20C2726E45C00B5B84E /* Debug */ = {
+		84988B38272DA24F000129EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -555,16 +583,16 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.WeatherUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.VKUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Weather;
+				TEST_TARGET_NAME = VK;
 			};
 			name = Debug;
 		};
-		8421F20D2726E45C00B5B84E /* Release */ = {
+		84988B39272DA24F000129EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -577,55 +605,55 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.WeatherUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MK.MikhailKirzhnerUI.VKUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Weather;
+				TEST_TARGET_NAME = VK;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8421F1D62726E45900B5B84E /* Build configuration list for PBXProject "KirzhnerVK" */ = {
+		84988B02272DA24C000129EE /* Build configuration list for PBXProject "VK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8421F2032726E45C00B5B84E /* Debug */,
-				8421F2042726E45C00B5B84E /* Release */,
+				84988B2F272DA24F000129EE /* Debug */,
+				84988B30272DA24F000129EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8421F2052726E45C00B5B84E /* Build configuration list for PBXNativeTarget "KirzhnerVK" */ = {
+		84988B31272DA24F000129EE /* Build configuration list for PBXNativeTarget "VK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8421F2062726E45C00B5B84E /* Debug */,
-				8421F2072726E45C00B5B84E /* Release */,
+				84988B32272DA24F000129EE /* Debug */,
+				84988B33272DA24F000129EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8421F2082726E45C00B5B84E /* Build configuration list for PBXNativeTarget "KirzhnerVKTests" */ = {
+		84988B34272DA24F000129EE /* Build configuration list for PBXNativeTarget "VKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8421F2092726E45C00B5B84E /* Debug */,
-				8421F20A2726E45C00B5B84E /* Release */,
+				84988B35272DA24F000129EE /* Debug */,
+				84988B36272DA24F000129EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8421F20B2726E45C00B5B84E /* Build configuration list for PBXNativeTarget "KirzhnerVKUITests" */ = {
+		84988B37272DA24F000129EE /* Build configuration list for PBXNativeTarget "VKUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8421F20C2726E45C00B5B84E /* Debug */,
-				8421F20D2726E45C00B5B84E /* Release */,
+				84988B38272DA24F000129EE /* Debug */,
+				84988B39272DA24F000129EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8421F1D32726E45900B5B84E /* Project object */;
+	rootObject = 84988AFF272DA24C000129EE /* Project object */;
 }

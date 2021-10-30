@@ -1,14 +1,14 @@
 //
-//  KirzhnerVKTests.swift
-//  KirzhnerVK
+//  VKTests.swift
+//  VKTests
 //
-//  Created by Екатерина on 25.10.2021.
+//  Created by Екатерина on 30.10.2021.
 //
 
 import XCTest
-@testable import KirzhnerVK
+@testable import VK
 
-class WeatherTests: XCTestCase {
+class VKTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

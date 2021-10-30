@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  KirzhnerVK
+//  VK
 //
-//  Created by Екатерина on 25.10.2021.
+//  Created by Екатерина on 30.10.2021.
 //
 
 import UIKit
