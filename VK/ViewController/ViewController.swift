@@ -41,20 +41,43 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBAction func loginButtomPressed(_ sender: Any) {
-        // Получаем текст логина
-                let login = loginTextField.text!
-                // Получаем текст-пароль
-                let password = passwordTextField.text!
-                
-                // Проверяем, верны ли они
-                if login == "admin" && password == "123456" {
-                    print("успешная авторизация")
-                } else {
-                    print("неуспешная авторизация")
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        // Проверяем данные
+               let checkResult = checkUserData()
+               
+               // Если данные не верны, покажем ошибку
+               if !checkResult {
+                   showLoginError()
+               }
+               
+               // Вернем результат
+               return checkResult
+           }
+           
+           func checkUserData() -> Bool {
+               guard let login = loginTextField.text,
+                   let password = passwordTextField.text else { return false }
+               
+               if login == "admin" && password == "123456" {
+                   return true
+               } else {
+                   return false
+               }
+           }
+           
+           func showLoginError() {
+               // Создаем контроллер
+               let alter = UIAlertController(title: "Ошибка", message: "Введены не верные данные пользователя", preferredStyle: .alert)
+               // Создаем кнопку для UIAlertController
+               let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               // Добавляем кнопку на UIAlertController
+               alter.addAction(action)
+               // Показываем UIAlertController
+               present(alter, animated: true, completion: nil)
 
     }
-}
     
     // Когда клавиатура появляется
         @objc func keyboardWasShown(notification: Notification) {
@@ -67,6 +90,7 @@ class ViewController: UIViewController {
             // Добавляем отступ внизу UIScrollView, равный размеру клавиатуры
             self.scrollView?.contentInset = contentInsets
             scrollView?.scrollIndicatorInsets = contentInsets
+            
         }
         
         //Когда клавиатура исчезает
