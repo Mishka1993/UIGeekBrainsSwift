@@ -21,6 +21,7 @@
 		84517034275A040C005C7948 /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84517033275A040C005C7948 /* CustomInteractiveTransition.swift */; };
 		84517036275A0457005C7948 /* PushAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84517035275A0457005C7948 /* PushAnimate.swift */; };
 		84517038275A04D9005C7948 /* PopAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84517037275A04D9005C7948 /* PopAnimate.swift */; };
+		84559B3727625DD5002EBC43 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84559B3627625DD5002EBC43 /* UserSession.swift */; };
 		84623596273D88F800249DC5 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84623595273D88F800249DC5 /* FriendsViewController.swift */; };
 		84623598273D988200249DC5 /* PhotoFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84623597273D988200249DC5 /* PhotoFriendViewController.swift */; };
 		84813954272DB7E400BF4056 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84813953272DB7E400BF4056 /* TextField.swift */; };
@@ -73,6 +74,7 @@
 		84517033275A040C005C7948 /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
 		84517035275A0457005C7948 /* PushAnimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAnimate.swift; sourceTree = "<group>"; };
 		84517037275A04D9005C7948 /* PopAnimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimate.swift; sourceTree = "<group>"; };
+		84559B3627625DD5002EBC43 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		84623595273D88F800249DC5 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		84623597273D988200249DC5 /* PhotoFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFriendViewController.swift; sourceTree = "<group>"; };
 		84813953272DB7E400BF4056 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -133,6 +135,15 @@
 			path = CustomNavigation;
 			sourceTree = "<group>";
 		};
+		84559B3527625D97002EBC43 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				84988B0A272DA24C000129EE /* AppDelegate.swift */,
+				84988B0C272DA24C000129EE /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		84623590273D82CB00249DC5 /* FriendsTebleView */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +197,7 @@
 		84988B09272DA24C000129EE /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				84559B3527625D97002EBC43 /* App */,
 				84517030275A037F005C7948 /* CustomNavigation */,
 				84A2EF59274CCD2700CE15AA /* LoadAnimation */,
 				84CC86D42744118900866D36 /* NewFeed */,
@@ -196,8 +208,6 @@
 				84623590273D82CB00249DC5 /* FriendsTebleView */,
 				84A8F0A2273D6A7E00CB4D56 /* Models */,
 				84A8F0A1273D69C900CB4D56 /* UIView */,
-				84988B0A272DA24C000129EE /* AppDelegate.swift */,
-				84988B0C272DA24C000129EE /* SceneDelegate.swift */,
 				84988B10272DA24C000129EE /* Main.storyboard */,
 				84988B13272DA24F000129EE /* Assets.xcassets */,
 				84988B15272DA24F000129EE /* LaunchScreen.storyboard */,
@@ -227,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				84A8F0AA273D703800CB4D56 /* LoginViewController.swift */,
+				84559B3627625DD5002EBC43 /* UserSession.swift */,
 			);
 			path = LoginViewController;
 			sourceTree = "<group>";
@@ -425,6 +436,7 @@
 				84988B0B272DA24C000129EE /* AppDelegate.swift in Sources */,
 				84623596273D88F800249DC5 /* FriendsViewController.swift in Sources */,
 				84378665275F993600B2A50D /* ProfileUserTableViewCell.swift in Sources */,
+				84559B3727625DD5002EBC43 /* UserSession.swift in Sources */,
 				84517032275A03B2005C7948 /* CustomNavigationController.swift in Sources */,
 				84299D6827453676003B55FB /* NewsModel.swift in Sources */,
 				84813954272DB7E400BF4056 /* TextField.swift in Sources */,
