@@ -1,7 +1,7 @@
 //
 //  UserSession.swift
 //  VK
-// 
+//
 //  Created by Екатерина on 09.12.2021.
 //
 
@@ -12,6 +12,6 @@ final class Session {
     
     private init(){ }
 
-    var tokin: String = ""
+    var token: String = ""
     var userId: Int = 0
 }
