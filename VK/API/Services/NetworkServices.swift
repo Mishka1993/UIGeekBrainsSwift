@@ -11,7 +11,7 @@ import Alamofire
 class NetworkServices {
     
     let url = "https://api.vk.com"
-    let versionApi = "5.126"
+    let versionApi = "5.131"
     
     func getFriends() {
         
