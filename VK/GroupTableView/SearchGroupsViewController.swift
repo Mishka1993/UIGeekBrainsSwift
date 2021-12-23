@@ -51,7 +51,7 @@ extension SearchGroupsViewController: UITableViewDelegate, UITableViewDataSource
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchViewControllerIdentifier", for: indexPath) as? TableViewCell
         else { return UITableViewCell() }
         let group = arrayGroups()[indexPath.row]
-        cell.configurate(fullName: group.nameGroup, imgProfile: group.imageGroup, description: group.descrip)
+        //cell.configurate(fullName: group.nameGroup, description: group.descrip)
         return cell
     }
     

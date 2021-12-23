@@ -93,7 +93,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource{
         }
         let description = friend[indexPath.row].descripFriend
         
-        cell.configurate(fullName: name, imgProfile: photo, description: description)
+        //cell.configurate(fullName: name, description: description)
         
         return cell
     }
@@ -109,10 +109,10 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource{
         performSegue(withIdentifier: "showPhotos", sender: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? PhotoFriendViewController {
-            let indexPath = sender as! IndexPath
-            destination.friend = arrayByLetter(letter: arrayLetter()[indexPath.section])[indexPath.row]
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? PhotoFriendViewController {
+//            let indexPath = sender as! IndexPath
+//            destination.friend = arrayByLetter(letter: arrayLetter()[indexPath.section])[indexPath.row]
+//        }
+//    }
 }
