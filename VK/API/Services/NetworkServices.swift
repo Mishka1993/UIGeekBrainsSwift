@@ -22,11 +22,11 @@ class NetworkServices {
         
         let parameters: Parameters = [
             "user_id": userId,
-            "access_token": tokin,
-            "v": versionApi,
             "order": "name",
-            "count": "100",
-            "fields": "nickname,bdate,city,country,photo_50,online"
+            "count": "50",
+            "fields": "photo_100, photo_50, city, domain",
+            "access_token": tokin,
+            "v": versionApi
         ]
         AF.request(url, method: .get, parameters: parameters).responseData { response in
             guard let jsonData = response.data else { return }

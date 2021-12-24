@@ -1,35 +1,22 @@
 import Foundation
-
+import RealmSwift
 
 // MARK: - Friend
-struct Friend: Codable {
-    let id: Int
-    let isClosed: Bool?
-    let trackCode: String
-    let canAccessClosed: Bool?
-    let firstName: String
-    let photo50: String
-    let city: City?
-    let lastName: String
-    let online: Int?
-    let nickname: String?
-    let country: City?
+class Friend: Object, Codable {
+    @objc dynamic var domain: String = ""
+    @objc dynamic var id: Int = 0
+    @objc dynamic var photo100: String = ""
+    @objc dynamic var lastName: String = ""
+    @objc dynamic var photo50: String = ""
+    @objc dynamic var trackCode: String? = ""
+    @objc dynamic var firstName: String = ""
 
     enum CodingKeys: String, CodingKey {
-        case id
-        case isClosed = "is_closed"
-        case trackCode = "track_code"
-        case canAccessClosed = "can_access_closed"
-        case firstName = "first_name"
-        case photo50 = "photo_50"
-        case city
+        case domain, id
+        case photo100 = "photo_100"
         case lastName = "last_name"
-        case online, nickname, country
+        case photo50 = "photo_50"
+        case trackCode = "track_code"
+        case firstName = "first_name"
     }
-}
-
-// MARK: - City
-struct City: Codable {
-    let id: Int
-    let title: String
 }

@@ -33,9 +33,9 @@ class TableViewCell: UITableViewCell {
         id = friend.id
         
         nameCell.text = "\(friend.firstName) \(friend.lastName)"
-        descripCell.text = friend.city?.title
+        descripCell.text = String(friend.id)
         
-        let url = URL(string: friend.photo50)
+        let url = URL(string: friend.photo100)
         avatarImage?.photoImage.sd_setImage(with: url, completed: nil)
     }
     
