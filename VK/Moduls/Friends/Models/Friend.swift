@@ -1,17 +1,7 @@
 import Foundation
 
-// MARK: - FriendsContainer
-struct FriendsContainer: Codable {
-    let response: FriendsResponse
-}
 
-// MARK: - Response
-struct FriendsResponse: Codable {
-    let count: Int
-    let items: [Friend]
-}
-
-// MARK: - Item
+// MARK: - Friend
 struct Friend: Codable {
     let id: Int
     let isClosed: Bool?
@@ -21,7 +11,7 @@ struct Friend: Codable {
     let photo50: String
     let city: City?
     let lastName: String
-    let online: Int
+    let online: Int?
     let nickname: String?
     let country: City?
 

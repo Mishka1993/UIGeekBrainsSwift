@@ -15,7 +15,7 @@ class PhotoFriendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: friend.photo50)
+       // let url = URL(string: friend.photo50)
        // galleryView.photoImage.sd_setImage(with: url, completed: nil)
         //galleryView.setImages(images: friend.photo50)
     }

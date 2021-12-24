@@ -20,7 +20,7 @@ class NetworkServices {
         
         let url = url + "friends.get"
         
-        let parameters: [String: String] = [
+        let parameters: Parameters = [
             "user_id": userId,
             "access_token": tokin,
             "v": versionApi,
@@ -28,12 +28,11 @@ class NetworkServices {
             "count": "100",
             "fields": "nickname,bdate,city,country,photo_50,online"
         ]
-        
         AF.request(url, method: .get, parameters: parameters).responseData { response in
             guard let jsonData = response.data else { return }
             do {
-                let friendsContainer = try JSONDecoder().decode(FriendsContainer.self, from: jsonData)
-                let friends = friendsContainer.response.items
+                let itemsData = try JSON(jsonData)["response"]["items"].rawData()
+                let friends = try JSONDecoder().decode([Friend].self, from: itemsData)
                 completion(friends)
             } catch {
                 print(error)
@@ -83,8 +82,8 @@ class NetworkServices {
         AF.request(url, method: .get, parameters: parameters).responseData { response in
             guard let jsonData = response.data else { return }
             do {
-                let groupsContainer = try JSONDecoder().decode(GroupContainer.self, from: jsonData)
-                let groups = groupsContainer.response.items
+                let itemsData = try JSON(jsonData)["response"]["items"].rawData()
+                let groups = try JSONDecoder().decode([Group].self, from: itemsData)
                 completion(groups)
             } catch {
                 print(error)
@@ -94,7 +93,7 @@ class NetworkServices {
     
     func searchGroups(_ name: String) {
         
-        let uri = url + "groups.search"
+        let url = url + "groups.search"
         
         let parameters: Parameters = [
             "access_token": Session.instance.token,
@@ -102,7 +101,7 @@ class NetworkServices {
             "q": name,
         ]
         
-        AF.request(uri, method: .get, parameters: parameters).responseJSON { (json) in
+        AF.request(url, method: .get, parameters: parameters).responseData { (json) in
             print(json)
         }
     }
