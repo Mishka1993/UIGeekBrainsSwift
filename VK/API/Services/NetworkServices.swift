@@ -16,7 +16,7 @@ class NetworkServices {
     let userId = Session.instance.userId
     let tokin = Session.instance.token
     
-    func getFriends(completion: @escaping([Friend])->()) {
+    func getFriends(completion: @escaping([Friend])->Void) {
         
         let url = url + "friends.get"
         
@@ -32,7 +32,10 @@ class NetworkServices {
             guard let jsonData = response.data else { return }
             do {
                 let itemsData = try JSON(jsonData)["response"]["items"].rawData()
-                let friends = try JSONDecoder().decode([Friend].self, from: itemsData)
+                
+                let friends = itemsData.compactMap { Friend(value: $0) }
+                                    
+//                                    friends = friends.filter { $0.deactivated == ""}
                 completion(friends)
             } catch {
                 print(error)
