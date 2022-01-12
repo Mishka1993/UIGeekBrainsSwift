@@ -16,26 +16,23 @@ class NetworkServices {
     let userId = Session.instance.userId
     let tokin = Session.instance.token
     
-    func getFriends(completion: @escaping([Friend])->Void) {
+    func getFriends(completion: @escaping([FriendDAO])->()) {
         
         let url = url + "friends.get"
         
         let parameters: Parameters = [
             "user_id": userId,
-            "order": "name",
-            "count": "50",
-            "fields": "photo_100, photo_50, city, domain",
             "access_token": tokin,
-            "v": versionApi
+            "v": versionApi,
+            "order": "name",
+            "count": "100",
+            "fields": "nickname,bdate,city,country,photo_50,online"
         ]
         AF.request(url, method: .get, parameters: parameters).responseData { response in
             guard let jsonData = response.data else { return }
             do {
                 let itemsData = try JSON(jsonData)["response"]["items"].rawData()
-                
-                let friends = itemsData.compactMap { Friend(value: $0) }
-                                    
-//                                    friends = friends.filter { $0.deactivated == ""}
+                let friends = try JSONDecoder().decode([FriendDAO].self, from: itemsData)
                 completion(friends)
             } catch {
                 print(error)
@@ -71,7 +68,7 @@ class NetworkServices {
         }
     }
     
-    func getGroups(completion: @escaping([Group])->()) {
+    func getGroups(completion: @escaping([GroupDAO])->()) {
         
         let url = url + "groups.get"
         
@@ -86,7 +83,7 @@ class NetworkServices {
             guard let jsonData = response.data else { return }
             do {
                 let itemsData = try JSON(jsonData)["response"]["items"].rawData()
-                let groups = try JSONDecoder().decode([Group].self, from: itemsData)
+                let groups = try JSONDecoder().decode([GroupDAO].self, from: itemsData)
                 completion(groups)
             } catch {
                 print(error)

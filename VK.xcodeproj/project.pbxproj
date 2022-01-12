@@ -11,8 +11,8 @@
 		840EADEA27730EAD00C81640 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADE927730EAD00C81640 /* Group.swift */; };
 		840EADEC27746D5300C81640 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADEB27746D5300C81640 /* GroupsTableViewController.swift */; };
 		840EADEE2774856900C81640 /* PhotoFriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADED2774856800C81640 /* PhotoFriendsCollectionViewController.swift */; };
-		840EADF02774865A00C81640 /* PhotoFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADEF2774865A00C81640 /* PhotoFriend.swift */; };
 		840EADF427748C2A00C81640 /* PhotoFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADF327748C2A00C81640 /* PhotoFriendCollectionViewCell.swift */; };
+		84100F53278B5F4700E59990 /* PhotoFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84100F52278B5F4700E59990 /* PhotoFriends.swift */; };
 		841D440727523022009DC2DD /* AnimatePhotoFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D440627523022009DC2DD /* AnimatePhotoFriends.swift */; };
 		841D440927523923009DC2DD /* AnimatePhotoFrinds.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841D440827523922009DC2DD /* AnimatePhotoFrinds.xib */; };
 		84299D6027450BC7003B55FB /* NewFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84299D5F27450BC7003B55FB /* NewFeedTableViewCell.swift */; };
@@ -49,11 +49,11 @@
 		84A8F0A6273D6BA900CB4D56 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8F0A5273D6BA800CB4D56 /* GroupModel.swift */; };
 		84BB61A92771FDDE003868A6 /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB61A82771FDDE003868A6 /* Data+PrettyJSON.swift */; };
 		84BB61AC27720255003868A6 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB61AB27720255003868A6 /* Friend.swift */; };
-		84D2F5502775C4BB00BC5A5C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 84D2F54F2775C4BB00BC5A5C /* Alamofire */; };
-		84D2F5532775C64600BC5A5C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 84D2F5522775C64600BC5A5C /* RealmSwift */; };
-		84D2F5562775C6A100BC5A5C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 84D2F5552775C6A100BC5A5C /* SDWebImage */; };
-		84D2F5592775C6E100BC5A5C /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 84D2F5582775C6E100BC5A5C /* SwiftKeychainWrapper */; };
-		84D2F55C2775C70300BC5A5C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 84D2F55B2775C70300BC5A5C /* SwiftyJSON */; };
+		84C65A88278B4368004FB1EA /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 84C65A87278B4368004FB1EA /* SwiftyJSON */; };
+		84C65A8B278B4399004FB1EA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 84C65A8A278B4399004FB1EA /* RealmSwift */; };
+		84C65A8E278B43D8004FB1EA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 84C65A8D278B43D8004FB1EA /* Alamofire */; };
+		84C65A91278B4407004FB1EA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 84C65A90278B4407004FB1EA /* SDWebImage */; };
+		84C65A9B278B5434004FB1EA /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C65A9A278B5434004FB1EA /* UITableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +78,8 @@
 		840EADE927730EAD00C81640 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		840EADEB27746D5300C81640 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupsTableViewController.swift; path = Models/GroupsTableViewController.swift; sourceTree = "<group>"; };
 		840EADED2774856800C81640 /* PhotoFriendsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFriendsCollectionViewController.swift; sourceTree = "<group>"; };
-		840EADEF2774865A00C81640 /* PhotoFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFriend.swift; sourceTree = "<group>"; };
 		840EADF327748C2A00C81640 /* PhotoFriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		84100F52278B5F4700E59990 /* PhotoFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFriends.swift; sourceTree = "<group>"; };
 		841D440627523022009DC2DD /* AnimatePhotoFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatePhotoFriends.swift; sourceTree = "<group>"; };
 		841D440827523922009DC2DD /* AnimatePhotoFrinds.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatePhotoFrinds.xib; sourceTree = "<group>"; };
 		84299D5F27450BC7003B55FB /* NewFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedTableViewCell.swift; sourceTree = "<group>"; };
@@ -120,6 +120,7 @@
 		84A8F0A5273D6BA800CB4D56 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		84BB61A82771FDDE003868A6 /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
 		84BB61AB27720255003868A6 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		84C65A9A278B5434004FB1EA /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +128,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D2F5562775C6A100BC5A5C /* SDWebImage in Frameworks */,
-				84D2F5532775C64600BC5A5C /* RealmSwift in Frameworks */,
-				84D2F5592775C6E100BC5A5C /* SwiftKeychainWrapper in Frameworks */,
-				84D2F55C2775C70300BC5A5C /* SwiftyJSON in Frameworks */,
-				84D2F5502775C4BB00BC5A5C /* Alamofire in Frameworks */,
+				84C65A8E278B43D8004FB1EA /* Alamofire in Frameworks */,
+				84C65A8B278B4399004FB1EA /* RealmSwift in Frameworks */,
+				84C65A91278B4407004FB1EA /* SDWebImage in Frameworks */,
+				84C65A88278B4368004FB1EA /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +355,7 @@
 		84A8F0A1273D69C900CB4D56 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				84C65A9A278B5434004FB1EA /* UITableView.swift */,
 				84813953272DB7E400BF4056 /* TextField.swift */,
 				84BB61A82771FDDE003868A6 /* Data+PrettyJSON.swift */,
 			);
@@ -375,7 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				84BB61AB27720255003868A6 /* Friend.swift */,
-				840EADEF2774865A00C81640 /* PhotoFriend.swift */,
+				84100F52278B5F4700E59990 /* PhotoFriends.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -405,11 +406,10 @@
 			);
 			name = VK;
 			packageProductDependencies = (
-				84D2F54F2775C4BB00BC5A5C /* Alamofire */,
-				84D2F5522775C64600BC5A5C /* RealmSwift */,
-				84D2F5552775C6A100BC5A5C /* SDWebImage */,
-				84D2F5582775C6E100BC5A5C /* SwiftKeychainWrapper */,
-				84D2F55B2775C70300BC5A5C /* SwiftyJSON */,
+				84C65A87278B4368004FB1EA /* SwiftyJSON */,
+				84C65A8A278B4399004FB1EA /* RealmSwift */,
+				84C65A8D278B43D8004FB1EA /* Alamofire */,
+				84C65A90278B4407004FB1EA /* SDWebImage */,
 			);
 			productName = VK;
 			productReference = 84988B07272DA24C000129EE /* VK.app */;
@@ -484,11 +484,10 @@
 			);
 			mainGroup = 84988AFE272DA24C000129EE;
 			packageReferences = (
-				84D2F54E2775C4BB00BC5A5C /* XCRemoteSwiftPackageReference "Alamofire" */,
-				84D2F5512775C64600BC5A5C /* XCRemoteSwiftPackageReference "realm-swift" */,
-				84D2F5542775C6A100BC5A5C /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				84D2F5572775C6E100BC5A5C /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
-				84D2F55A2775C70300BC5A5C /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				84C65A86278B4368004FB1EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				84C65A89278B4399004FB1EA /* XCRemoteSwiftPackageReference "realm-swift" */,
+				84C65A8C278B43D8004FB1EA /* XCRemoteSwiftPackageReference "Alamofire" */,
+				84C65A8F278B4407004FB1EA /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 84988B08272DA24C000129EE /* Products */;
 			projectDirPath = "";
@@ -539,6 +538,8 @@
 				849AC3362742AB1500086F03 /* TableViewCell.swift in Sources */,
 				84517034275A040C005C7948 /* CustomInteractiveTransition.swift in Sources */,
 				84383B5C273832D5004D4A61 /* GroupsViewController.swift in Sources */,
+				84C65A9B278B5434004FB1EA /* UITableView.swift in Sources */,
+				84100F53278B5F4700E59990 /* PhotoFriends.swift in Sources */,
 				840EADEA27730EAD00C81640 /* Group.swift in Sources */,
 				840EADEE2774856900C81640 /* PhotoFriendsCollectionViewController.swift in Sources */,
 				84A8F0A4273D6AE500CB4D56 /* FriendsModel.swift in Sources */,
@@ -548,7 +549,6 @@
 				840EADEC27746D5300C81640 /* GroupsTableViewController.swift in Sources */,
 				84299D6027450BC7003B55FB /* NewFeedTableViewCell.swift in Sources */,
 				84299D6A27454675003B55FB /* NewsFeedViewController.swift in Sources */,
-				840EADF02774865A00C81640 /* PhotoFriend.swift in Sources */,
 				84517036275A0457005C7948 /* PushAnimate.swift in Sources */,
 				84988B0B272DA24C000129EE /* AppDelegate.swift in Sources */,
 				84623596273D88F800249DC5 /* FriendsViewController.swift in Sources */,
@@ -627,6 +627,7 @@
 		84988B2F272DA24F000129EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -689,6 +690,7 @@
 		84988B30272DA24F000129EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -934,39 +936,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		84D2F54E2775C4BB00BC5A5C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.5.0;
-			};
-		};
-		84D2F5512775C64600BC5A5C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.20.2;
-			};
-		};
-		84D2F5542775C6A100BC5A5C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.12.1;
-			};
-		};
-		84D2F5572775C6E100BC5A5C /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.1;
-			};
-		};
-		84D2F55A2775C70300BC5A5C /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+		84C65A86278B4368004FB1EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
 			requirement = {
@@ -974,33 +944,52 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		84C65A89278B4399004FB1EA /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.20.2;
+			};
+		};
+		84C65A8C278B43D8004FB1EA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
+		84C65A8F278B4407004FB1EA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.12.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		84D2F54F2775C4BB00BC5A5C /* Alamofire */ = {
+		84C65A87278B4368004FB1EA /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D2F54E2775C4BB00BC5A5C /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = 84C65A86278B4368004FB1EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
-		84D2F5522775C64600BC5A5C /* RealmSwift */ = {
+		84C65A8A278B4399004FB1EA /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D2F5512775C64600BC5A5C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 84C65A89278B4399004FB1EA /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
-		84D2F5552775C6A100BC5A5C /* SDWebImage */ = {
+		84C65A8D278B43D8004FB1EA /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D2F5542775C6A100BC5A5C /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 84C65A8C278B43D8004FB1EA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		84C65A90278B4407004FB1EA /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84C65A8F278B4407004FB1EA /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
-		};
-		84D2F5582775C6E100BC5A5C /* SwiftKeychainWrapper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 84D2F5572775C6E100BC5A5C /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
-			productName = SwiftKeychainWrapper;
-		};
-		84D2F55B2775C70300BC5A5C /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 84D2F55A2775C70300BC5A5C /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

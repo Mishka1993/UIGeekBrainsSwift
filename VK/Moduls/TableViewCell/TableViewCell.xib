@@ -17,12 +17,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2b-uQ-WlJ" customClass="ImageCellView" customModule="VK" customModuleProvider="target">
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="L2b-uQ-WlJ" customClass="ImageCellView" customModule="VK" customModuleProvider="target">
                         <rect key="frame" x="12" y="6" width="48" height="48"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="48" id="3Ep-ZH-bvr"/>
                             <constraint firstAttribute="height" constant="48" id="f9Q-Sh-oCU"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="6" height="7"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G3Z-ib-SvQ">
                         <rect key="frame" x="80" y="12" width="41.5" height="36.5"/>

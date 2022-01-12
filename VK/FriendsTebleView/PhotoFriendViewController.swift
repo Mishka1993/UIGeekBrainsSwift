@@ -10,7 +10,7 @@ import SDWebImage
 
 class PhotoFriendViewController: UIViewController {
     @IBOutlet weak var galleryView: AnimatePhotoFriends!
-    var friend: Friend!
+    var friend: FriendDAO!
    
     
     override func viewDidLoad() {

@@ -7,15 +7,13 @@
 
 import Foundation
 import SwiftyJSON
-import RealmSwift
 
-class PhotoFriend: Object, Codable{
+struct PhotoFriend {
 
-    @objc dynamic var id: Int // идентификатор фотографии
-    @objc dynamic var countLikes: Int
-    @objc dynamic var userLikes: Bool
-    @objc dynamic var photo_url: String
-    
+    let id: Int // идентификатор фотографии
+    let countLikes: Int
+    let userLikes: Bool
+    let photo_url: String
     
     init(_ json: JSON) {
         
@@ -32,7 +30,6 @@ class PhotoFriend: Object, Codable{
                 findPhotoUrl = $0["url"].stringValue
             }
         }
-        
         self.photo_url = String(findPhotoUrl)
     }
 }

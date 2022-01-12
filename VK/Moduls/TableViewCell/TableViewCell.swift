@@ -13,7 +13,9 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameCell: UILabel!
     @IBOutlet weak var descripCell: UILabel!
-    @IBOutlet weak var avatarImage: ImageCellView?
+    @IBOutlet weak var avatarImage: ImageCellView!
+    
+    var imageURL: URL?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,34 +30,8 @@ class TableViewCell: UITableViewCell {
         clearCell()
     }
     
-    func configureFriend(with friend: Friend) {
-        
-        id = friend.id
-        
-        nameCell.text = "\(friend.firstName) \(friend.lastName)"
-        descripCell.text = String(friend.id)
-        
-        let url = URL(string: friend.photo100)
-        avatarImage?.photoImage.sd_setImage(with: url, completed: nil)
-    }
     
-    func configureGroups(with group: Group) {
-        
-        id = group.id
-        
-        nameCell.text = group.name
-        descripCell.text = "\(separatedNumber(group.membersCount)) подписчиков"
-        
-        let url = URL(string: group.photo50)
-        avatarImage?.photoImage.sd_setImage(with: url, completed: nil)
-    }
+  
 }
 
-func separatedNumber(_ number: Any) -> String {
-    guard let itIsANumber = number as? NSNumber else { return "Not a number" }
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .decimal
-    formatter.groupingSeparator = " "
-    formatter.decimalSeparator = ","
-    return formatter.string(from: itIsANumber)!
-}
+

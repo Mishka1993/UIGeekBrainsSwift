@@ -17,10 +17,6 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        if !Session.instance.token.isEmpty, Session.instance.userId > 0 {
-//            performSegue(withIdentifier: "showTabBarSegue", sender: nil)
-//        }
         authorizeToVK()
     }
     func authorizeToVK() {
@@ -64,7 +60,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         guard let token = params["access_token"], let userId = params["user_id"] else { return }
         
         Session.instance.token = token
-        Session.instance.userId = Int(userId) ?? 0
+        Session.instance.userId = userId
        
         performSegue(withIdentifier: "showTabBarSegue", sender: nil)
         

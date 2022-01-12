@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroupsTableViewController: UITableViewController {
     var groupsViewControllerIdentifier = "friendsViewControllerIdentifier"
     
     private var networkServices = NetworkServices()
-    private var groups: [Group] = []
+    private var groups: Results<GroupDAO>?
+    private var groupsDB = GroupsDB()
+    private var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +23,30 @@ class GroupsTableViewController: UITableViewController {
         
             networkServices.getGroups { [weak self] groups in
             guard let self = self else { return }
-            self.groups = groups
-            
-            self.tableView.reloadData()
-        }
+                self.groupsDB.save(groups)
+                self.groups = self.groupsDB.fetch()
+                self.token = self.groups?.observe(on: .main, { [weak self] changes in
+                    
+                    guard let self = self else { return }
+                    
+                    switch changes {
+                    case .initial:
+                        self.tableView.reloadData()
+                        
+                    case .update(_, let deletions, let insertions, let modifications):
+                        self.tableView.beginUpdates()
+                        self.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                        self.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
+                        self.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                        self.tableView.endUpdates()
+                        
+                    case .error(let error):
+                        print("\(error)")
+                    }
+                    
+                })
+            }
+        
         self.tableView.tableFooterView = UIView()
     }
     
@@ -36,17 +59,32 @@ class GroupsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        guard let groups = groups else { return 0 }
         return groups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: groupsViewControllerIdentifier, for: indexPath) as? TableViewCell
         else { return UITableViewCell() }
+        let group = groups?[indexPath.row]
+        cell.nameCell.text = group?.name ?? ""
+        cell.descripCell.text = "\(separatedNumber(group?.membersCount ?? "0")) подписчиков"
         
-        cell.configureGroups(with: groups[indexPath.row])
+        cell.imageURL = URL(string: group?.photo50 ?? "")
+        cell.avatarImage?.photoImage.sd_setImage(with: cell.imageURL, completed: nil)
         
         return cell
     }
+    
+    func separatedNumber(_ number: Any) -> String {
+        guard let itIsANumber = number as? NSNumber else { return "Not a number" }
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = " "
+        formatter.decimalSeparator = ","
+        return formatter.string(from: itIsANumber)!
+    }
+    
     /*
      
      */
