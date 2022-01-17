@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Стройка.jpg",
+      "filename" : "Стройка-3.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Стройка-1.jpg",
+      "filename" : "Стройка-4.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Стройка-2.jpg",
+      "filename" : "Стройка.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
