@@ -33,6 +33,8 @@
 		50B887BE27967CE100C9A080 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 50B887BD27967CE100C9A080 /* FirebaseStorageCombine-Community */; };
 		50B887C027967CE100C9A080 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 50B887BF27967CE100C9A080 /* FirebaseStorageSwift-Beta */; };
 		50B887C92796BB2300C9A080 /* GroupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B887C82796BB2300C9A080 /* GroupsModel.swift */; };
+		50B887CB2796C95D00C9A080 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B887CA2796C95D00C9A080 /* UIImageView.swift */; };
+		50B887CE2796CE6B00C9A080 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 50B887CD2796CE6B00C9A080 /* SwiftKeychainWrapper */; };
 		840EADE72772F84500C81640 /* ImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADE62772F84500C81640 /* ImageCellView.swift */; };
 		840EADEA27730EAD00C81640 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADE927730EAD00C81640 /* Group.swift */; };
 		840EADEC27746D5300C81640 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADEB27746D5300C81640 /* GroupsTableViewController.swift */; };
@@ -93,6 +95,7 @@
 
 /* Begin PBXFileReference section */
 		50B887C82796BB2300C9A080 /* GroupsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsModel.swift; sourceTree = "<group>"; };
+		50B887CA2796C95D00C9A080 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		840EADE62772F84500C81640 /* ImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellView.swift; sourceTree = "<group>"; };
 		840EADE927730EAD00C81640 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		840EADEB27746D5300C81640 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupsTableViewController.swift; path = Models/GroupsTableViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 			files = (
 				50B887B627967CE100C9A080 /* FirebaseMessaging in Frameworks */,
 				50B887B227967CE100C9A080 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				50B887CE2796CE6B00C9A080 /* SwiftKeychainWrapper in Frameworks */,
 				50B887A027967CE100C9A080 /* FirebaseDatabase in Frameworks */,
 				50B8879627967CE100C9A080 /* FirebaseAppCheck in Frameworks */,
 				50B8879A27967CE100C9A080 /* FirebaseAuth in Frameworks */,
@@ -391,6 +395,7 @@
 				84C65A9A278B5434004FB1EA /* UITableView.swift */,
 				84813953272DB7E400BF4056 /* TextField.swift */,
 				84BB61A82771FDDE003868A6 /* Data+PrettyJSON.swift */,
+				50B887CA2796C95D00C9A080 /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 				50B887BB27967CE100C9A080 /* FirebaseStorage */,
 				50B887BD27967CE100C9A080 /* FirebaseStorageCombine-Community */,
 				50B887BF27967CE100C9A080 /* FirebaseStorageSwift-Beta */,
+				50B887CD2796CE6B00C9A080 /* SwiftKeychainWrapper */,
 			);
 			productName = VK;
 			productReference = 84988B07272DA24C000129EE /* VK.app */;
@@ -528,6 +534,7 @@
 				84C65A8C278B43D8004FB1EA /* XCRemoteSwiftPackageReference "Alamofire" */,
 				84C65A8F278B4407004FB1EA /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				50B8878E27967CE100C9A080 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				50B887CC2796CE6A00C9A080 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 84988B08272DA24C000129EE /* Products */;
 			projectDirPath = "";
@@ -577,6 +584,7 @@
 				849AC3362742AB1500086F03 /* TableViewCell.swift in Sources */,
 				84517034275A040C005C7948 /* CustomInteractiveTransition.swift in Sources */,
 				84C65A9B278B5434004FB1EA /* UITableView.swift in Sources */,
+				50B887CB2796C95D00C9A080 /* UIImageView.swift in Sources */,
 				84100F53278B5F4700E59990 /* PhotoFriends.swift in Sources */,
 				840EADEA27730EAD00C81640 /* Group.swift in Sources */,
 				840EADEE2774856900C81640 /* PhotoFriendsCollectionViewController.swift in Sources */,
@@ -977,6 +985,14 @@
 				minimumVersion = 8.10.0;
 			};
 		};
+		50B887CC2796CE6A00C9A080 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 		84C65A86278B4368004FB1EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
@@ -1136,6 +1152,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 50B8878E27967CE100C9A080 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageSwift-Beta";
+		};
+		50B887CD2796CE6B00C9A080 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50B887CC2796CE6A00C9A080 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
 		};
 		84C65A87278B4368004FB1EA /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
