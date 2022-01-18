@@ -6,6 +6,13 @@
 //
 
 import UIKit
+import Foundation
+
+struct friendsModel {
+    var nameFriend: String
+    var photoFriend: [UIImage]
+    var descripFriend: String
+}
 
 class ProfileUITableView: UIViewController {
     @IBOutlet weak var profileTableView: UITableView!
