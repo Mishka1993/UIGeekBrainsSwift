@@ -26,7 +26,7 @@ class AuthViewController: UIViewController {
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "scope", value: "336918"),
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "v", value: "5.130"),
+            URLQueryItem(name: "v", value: "5.131"),
         ]
         return urlComp
     }()
