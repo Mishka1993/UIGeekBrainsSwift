@@ -84,13 +84,5 @@ extension AuthViewController: WKNavigationDelegate {
         }
         decisionHandler(.cancel)
     }
-    //         print("token = \(token)")
-    //         print("user Id = \(userID)")
-    //
-    //         Session.instance.token = token
-    //         Session.instance.userId = userIDString
-    //
-    //         performSegue(withIdentifier: "showTabBarSegue", sender: nil)
-    //
-    //         decisionHandler(.cancel)
+
 }
