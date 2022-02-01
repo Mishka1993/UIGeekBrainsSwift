@@ -25,7 +25,6 @@ final class FriendsTableViewController: UITableViewController {
         
         networkServices.getFriends { [weak self] friends in
             guard let self = self else { return }
-            
             self.friendsDB.save(friends)
             self.friends = self.friendsDB.fetch()
             print(self.friends! )

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftKeychainWrapper
+import Firebase
 
 final class Session {
     private init() {}

@@ -42,6 +42,8 @@ final class GroupsDB {
     func save(_ items: [GroupDAO]) {
         let realm = try! Realm()
         
+        deleteAll()
+        
         try! realm.write {
             realm.add(items)
         }

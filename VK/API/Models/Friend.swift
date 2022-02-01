@@ -36,7 +36,7 @@ final class FriendsDB {
     
     func save(_ items: [FriendDAO]) {
         let realm = try! Realm()
-        
+        deleteAll()
         try! realm.write {
             realm.add(items)
         }
