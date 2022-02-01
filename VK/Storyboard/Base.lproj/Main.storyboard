@@ -192,37 +192,6 @@
             </objects>
             <point key="canvasLocation" x="4895" y="-657"/>
         </scene>
-        <!--Главная-->
-        <scene sceneID="I0f-CZ-Vzs">
-            <objects>
-                <viewController id="WrJ-EQ-p2I" customClass="NewsFeedViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xXU-mj-dga">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1LK-rP-t28">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="l5R-Z3-fmJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="1LK-rP-t28" firstAttribute="leading" secondItem="l5R-Z3-fmJ" secondAttribute="leading" id="2Gk-Rg-eKc"/>
-                            <constraint firstItem="1LK-rP-t28" firstAttribute="top" secondItem="l5R-Z3-fmJ" secondAttribute="top" id="cDo-EF-xfX"/>
-                            <constraint firstItem="l5R-Z3-fmJ" firstAttribute="trailing" secondItem="1LK-rP-t28" secondAttribute="trailing" id="q53-qA-mK5"/>
-                            <constraint firstItem="l5R-Z3-fmJ" firstAttribute="bottom" secondItem="1LK-rP-t28" secondAttribute="bottom" id="vDL-L6-6sO"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Главная" id="Jqh-wi-dT7"/>
-                    <connections>
-                        <outlet property="newsFeedTableView" destination="1LK-rP-t28" id="6rB-J2-Pak"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dqu-Qb-BXg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3967" y="80"/>
-        </scene>
         <!--Сообщества-->
         <scene sceneID="yXe-dH-wVT">
             <objects>
@@ -453,7 +422,7 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="WrJ-EQ-p2I" kind="relationship" relationship="rootViewController" id="HmY-6B-q2V"/>
+                        <segue destination="5dG-Ji-7zf" kind="relationship" relationship="rootViewController" id="ktB-t8-D8h"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBA-u0-oaY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -538,6 +507,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfs-GM-raa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5769.5652173913049" y="-660.26785714285711"/>
+        </scene>
+        <!--Главная-->
+        <scene sceneID="ZBP-G7-Aic">
+            <objects>
+                <tableViewController id="5dG-Ji-7zf" customClass="NewsTableViewController" customModule="VK" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ucP-5H-hFo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" id="Fhm-zm-yB7">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fhm-zm-yB7" id="9Jl-f6-C4G">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5dG-Ji-7zf" id="0sX-xf-bTo"/>
+                            <outlet property="delegate" destination="5dG-Ji-7zf" id="WvF-uy-viR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Главная" id="V8x-Ck-vDC"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="He1-d9-mdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3816" y="80"/>
         </scene>
     </scenes>
     <resources>
