@@ -6,127 +6,319 @@
 //
 
 import UIKit
+import SDWebImage
 
+//class NewsTableViewController: UITableViewController {
+//    private var sections = [NewsSection]()
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//
+//        registerNib()
+//        loadData()
+//    }
+//
+//    func loadData() {
+//        for item in demoNews {
+//            var dataRow = [NewsDataRow]()
+//            if !item.text.isEmpty {
+//                dataRow.append(NewsDataRow(type: .text, text: item.text))
+//            }
+//            if !item.photo.isEmpty {
+//                dataRow.append(NewsDataRow(type: .photo, photo: item.photo))
+//            }
+//
+//            sections.append(NewsSection(
+//                postId: item.postId,
+//                date: item.date,
+//                author: item.author,
+//                comments: item.comments,
+//                likes: item.likes,
+//                views: item.views,
+//                reposts: item.repost,
+//                data: dataRow
+//            )
+//            )
+//        }
+//    }
+//
+//    private func registerNib() {
+//        tableView.register(
+//            SectionHeader.nib,
+//            forHeaderFooterViewReuseIdentifier: "Header"
+//        )
+//
+//        tableView.register(
+//            SectionFooter.nib,
+//            forHeaderFooterViewReuseIdentifier: "Footer"
+//        )
+//
+//        let nibText = UINib(nibName: "TextViewCell", bundle: nil)
+//        tableView.register(nibText, forCellReuseIdentifier: "TextViewCell")
+//
+//        let nibPhoto = UINib(nibName: "PhotoViewCell", bundle: nil)
+//        tableView.register(nibPhoto, forCellReuseIdentifier: "PhotoViewCell")
+//    }
+//}
+//
+//extension NewsTableViewController {
+//    // MARK: - Table view data source
+//
+//    override func numberOfSections(in _: UITableView) -> Int {
+//        sections.count
+//    }
+//
+//    override func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        sections[section].data.count
+//    }
+//
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let section = sections[indexPath.section]
+//        let sectionData = section.data[indexPath.row]
+//
+//        switch sectionData.type {
+//        case .text:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath) as! TextViewCell
+//            cell.postTextLabel.text = sectionData.text
+//            return cell
+//        case .photo:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoViewCell", for: indexPath) as! PhotoViewCell
+//            cell.postPhotoImageView.image = UIImage(named: sectionData.photo ?? "default-news-image")
+//            return cell
+//        }
+//    }
+//
+//    override func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+//
+//    override func tableView(_: UITableView, estimatedHeightForRowAt _: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+//
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as? SectionHeader
+//        else { return nil }
+//
+//        let sectionData = sections[section]
+//        view.authorImageView.image = UIImage(named: sectionData.authorPhoto)
+//        view.authorNameLabel.text = sectionData.author
+//        view.datePostLabel.text = sectionData.date
+//
+//        return view
+//    }
+//
+//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Footer") as? SectionFooter
+//        else { return nil }
+//
+//        let sectionData = sections[section]
+//        view.likeLabel.text = String(sectionData.likes)
+//        view.commentLabel.text = String(sectionData.comments)
+//        view.repostLabel.text = String(sectionData.reposts)
+//        view.viewLabel.text = String(sectionData.views)
+//        return view
+//    }
+//
+//    override func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+//
+//    override func tableView(_: UITableView, estimatedHeightForHeaderInSection _: Int) -> CGFloat {
+//        return 100.0
+//    }
+//}
 class NewsTableViewController: UITableViewController {
-    private var sections = [NewsSection]()
+     private var sections = [NewsSection]() {
+         didSet {
+             tableView.reloadData()
+         }
+     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+     private let networkService = NetworkServices()
+     private var pullControl = UIRefreshControl()
 
-        tableView.delegate = self
-        tableView.dataSource = self
+     override func viewDidLoad() {
+         super.viewDidLoad()
 
-        registerNib()
-        loadData()
-    }
+         tableView.delegate = self
+         tableView.dataSource = self
 
-    func loadData() {
-        for item in demoNews {
-            var dataRow = [NewsDataRow]()
-            if !item.text.isEmpty {
-                dataRow.append(NewsDataRow(type: .text, text: item.text))
-            }
-            if !item.photo.isEmpty {
-                dataRow.append(NewsDataRow(type: .photo, photo: item.photo))
-            }
+         registerNib()
+         loadData()
 
-            sections.append(NewsSection(
-                postId: item.postId,
-                date: item.date,
-                author: item.author,
-                comments: item.comments,
-                likes: item.likes,
-                views: item.views,
-                reposts: item.repost,
-                data: dataRow
-            )
-            )
-        }
-    }
+         pullControl.attributedTitle = NSAttributedString(string: "News refresh")
+         pullControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+         tableView.refreshControl = pullControl
+     }
 
-    private func registerNib() {
-        tableView.register(
-            SectionHeader.nib,
-            forHeaderFooterViewReuseIdentifier: "Header"
-        )
+     func loadData() {
+         var sectionDataContent = [NewsSection]()
 
-        tableView.register(
-            SectionFooter.nib,
-            forHeaderFooterViewReuseIdentifier: "Footer"
-        )
+         networkService.getNewsFeed { [weak self] resp in
+             guard let self = self,
+                   resp.newsItems.items.count > 0
+             else { return }
 
-        let nibText = UINib(nibName: "TextViewCell", bundle: nil)
-        tableView.register(nibText, forCellReuseIdentifier: "TextViewCell")
+             for itemNews in resp.newsItems.items {
+                 var authorTitle = ""
+                 var authorPhoto: URL?
+                 var dataRow = [NewsDataRow]()
+                 var isDataRowFill = false
 
-        let nibPhoto = UINib(nibName: "PhotoViewCell", bundle: nil)
-        tableView.register(nibPhoto, forCellReuseIdentifier: "PhotoViewCell")
-    }
-}
+                 if let photoAttach = itemNews.attachments?[0].photo?.sizes {
+                     // cell type photo
+                     dataRow.append(NewsDataRow(type: .photo, photo: photoAttach.getImageByType(type: "x")?.photoUrl))
+                     isDataRowFill = true
+                 }
 
-extension NewsTableViewController {
-    // MARK: - Table view data source
+                 if !(itemNews.text?.isEmpty ?? false) {
+                     // cell type text
+                     dataRow.append(NewsDataRow(type: .text, text: itemNews.text))
+                     isDataRowFill = true
+                 }
 
-    override func numberOfSections(in _: UITableView) -> Int {
-        sections.count
-    }
+                 if itemNews.sourceId > 0 {
+                     // profile
+                     if let profile = resp.profileItems.profiles.first(where: { $0.id == abs(Int32(itemNews.sourceId)) }) {
+                         authorTitle = "\(profile.lastName) \(profile.firstName)"
+                         authorPhoto = URL(string: profile.photo50)
+                     }
+                 } else {
+                     // group
+                     if let group = resp.groupItems.groups.first(where: { $0.id == abs(Int32(itemNews.sourceId)) }) {
+                         authorTitle = group.name
+                         authorPhoto = URL(string: group.photo50)
+                     }
+                 }
 
-    override func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sections[section].data.count
-    }
+                 // default...
+                 if !isDataRowFill {
+                     dataRow.append(NewsDataRow(type: .text, text: "Контент события не определен (.."))
+                 }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = sections[indexPath.section]
-        let sectionData = section.data[indexPath.row]
+                 sectionDataContent.append(NewsSection(
+                     postId: itemNews.postId,
+                     date: itemNews.postDate,
+                     author: authorTitle,
+                     authorPhoto: authorPhoto,
+                     comments: itemNews.comments?.count ?? 0,
+                     likes: itemNews.likes?.count ?? 0,
+                     views: itemNews.views?.count ?? 0,
+                     reposts: itemNews.reposts?.count ?? 0,
+                     data: dataRow
+                 ))
+             }
+             self.sections = sectionDataContent
+         }
+     }
 
-        switch sectionData.type {
-        case .text:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath) as! TextViewCell
-            cell.postTextLabel.text = sectionData.text
-            return cell
-        case .photo:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoViewCell", for: indexPath) as! PhotoViewCell
-            cell.postPhotoImageView.image = UIImage(named: sectionData.photo ?? "default-news-image")
-            return cell
-        }
-    }
+     private func registerNib() {
+         tableView.register(
+             SectionHeader.nib,
+             forHeaderFooterViewReuseIdentifier: "Header"
+         )
 
-    override func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
+         tableView.register(
+             SectionFooter.nib,
+             forHeaderFooterViewReuseIdentifier: "Footer"
+         )
 
-    override func tableView(_: UITableView, estimatedHeightForRowAt _: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
+         let nibText = UINib(nibName: "TextViewCell", bundle: nil)
+         tableView.register(nibText, forCellReuseIdentifier: "TextViewCell")
 
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as? SectionHeader
-        else { return nil }
+         let nibPhoto = UINib(nibName: "PhotoViewCell", bundle: nil)
+         tableView.register(nibPhoto, forCellReuseIdentifier: "PhotoViewCell")
+     }
 
-        let sectionData = sections[section]
-        view.authorImageView.image = UIImage(named: sectionData.authorPhoto)
-        view.authorNameLabel.text = sectionData.author
-        view.datePostLabel.text = sectionData.date
+     @objc func refresh(_: AnyObject) {
+         loadData()
+         refreshControl?.endRefreshing()
+     }
+ }
 
-        return view
-    }
+ extension NewsTableViewController {
+     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Footer") as? SectionFooter
-        else { return nil }
+     override func numberOfSections(in _: UITableView) -> Int {
+         sections.count
+     }
 
-        let sectionData = sections[section]
-        view.likeLabel.text = String(sectionData.likes)
-        view.commentLabel.text = String(sectionData.comments)
-        view.repostLabel.text = String(sectionData.reposts)
-        view.viewLabel.text = String(sectionData.views)
-        return view
-    }
+     override func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+         sections[section].data.count
+     }
 
-    override func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
-        return UITableView.automaticDimension
-    }
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let section = sections[indexPath.section]
+         let sectionData = section.data[indexPath.row]
 
-    override func tableView(_: UITableView, estimatedHeightForHeaderInSection _: Int) -> CGFloat {
-        return 100.0
-    }
-}
+         switch sectionData.type {
+         case .text:
+             let cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath) as! TextViewCell
+             cell.postTextLabel.text = sectionData.text
+             return cell
+         case .photo:
+             let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoViewCell", for: indexPath) as! PhotoViewCell
+             if let url = sectionData.photo {
+                 Nuke.loadImage(
+                     with: url,
+                     into: cell.postPhotoImageView
+                 )
+             }
+
+             return cell
+         }
+     }
+
+     override func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+         return UITableView.automaticDimension
+     }
+
+     override func tableView(_: UITableView, estimatedHeightForRowAt _: IndexPath) -> CGFloat {
+         return UITableView.automaticDimension
+     }
+
+     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as? SectionHeader
+         else { return nil }
+
+         let sectionData = sections[section]
+
+         // clip image
+         view.authorImageView.clip(cornerRadius: 10, borderColor: UIColor.lightGray.cgColor)
+
+         if let url = sectionData.authorPhoto {
+             Nuke.loadImage(
+                 with: url,
+                 into: view.authorImageView
+             )
+         }
+         view.authorNameLabel.text = sectionData.author
+         view.datePostLabel.text = sectionData.date
+
+         return view
+     }
+
+     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Footer") as? SectionFooter
+         else { return nil }
+
+         let sectionData = sections[section]
+         view.likeLabel.text = String(sectionData.likes)
+         view.commentLabel.text = String(sectionData.comments)
+         view.repostLabel.text = String(sectionData.reposts)
+         view.viewLabel.text = String(sectionData.views)
+         return view
+     }
+
+     override func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
+         return UITableView.automaticDimension
+     }
+
+     override func tableView(_: UITableView, estimatedHeightForHeaderInSection _: Int) -> CGFloat {
+         return 100.0
+     }
+ }

@@ -106,4 +106,28 @@ class NetworkServices {
         }
     }
     
+    func getNewsFeed(completion: @escaping(NewsResponseDTO) ->()){
+        let url = url + "newsfeed.get"
+        
+        let parameters: Parameters = [
+            "user_id": userId,
+            "access_token": tokin,
+            "v": versionApi,
+            "count": "30",
+            "filters": "post,photo,note",
+            "fields": "first_name,last_name,photo_100,photo_50,description",
+        ]
+        
+        AF.request(url, method: .get, parameters: parameters).responseData { response in
+            guard let jsonData = response.data else { return }
+            do {
+                let itemsData = try JSON(jsonData)["response"]["items"].rawData()
+                let NewsFeed = try JSONDecoder().decode(NewsResponseDTO.self, from: itemsData)
+                completion(NewsFeed)
+            } catch {
+                print(error)
+            }
+        }
+    }
 }
+
