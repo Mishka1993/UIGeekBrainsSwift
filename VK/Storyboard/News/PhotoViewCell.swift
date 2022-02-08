@@ -9,7 +9,8 @@ import UIKit
 
 class PhotoViewCell: UITableViewCell {
     @IBOutlet var postPhotoImageView: UIImageView!
-
+    var imageURL: URL?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
