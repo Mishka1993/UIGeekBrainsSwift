@@ -67,3 +67,9 @@ final class FriendsDB {
         
     }
 }
+extension FriendDAO {
+    var photoUrl: URL? {
+        URL(string: photo50)
+    }
+}
+

@@ -8,6 +8,10 @@
 import Foundation
 import RealmSwift
 
+struct GroupItems: Codable {
+    var items: [GroupDAO]
+}
+
 // MARK: - Group
 @objcMembers
 class GroupDAO: Object, Codable {
@@ -72,5 +76,10 @@ final class GroupsDB {
             realm.delete(item)
         }
         
+    }
+}
+extension GroupDAO {
+    var photoUrl: URL? {
+        URL(string: photo50)
     }
 }

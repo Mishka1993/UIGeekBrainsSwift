@@ -10,6 +10,7 @@ import UIKit
 class TextViewCell: UITableViewCell {
     @IBOutlet var postTextLabel: UILabel!
 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
