@@ -206,5 +206,73 @@ class NetworkServices {
         }
         .resume()
     }
+
+    func searchGroups(query: String,
+                      completion: @escaping ([GroupDAO]) -> Void)
+    {
+        guard let url = prepareUrl(
+            methodName: "groups.search",
+            params: [
+                URLQueryItem(name: "q", value: query),
+                URLQueryItem(name: "count", value: "30"),
+                URLQueryItem(name: "fields", value: "description"),
+            ]
+        )
+        else { return }
+
+        vkRequest(url: url) { resp in
+            do {
+                let groupList = try JSONDecoder()
+                    .decode(VKResponse<GroupItems>.self, from: resp)
+                completion(groupList.response.items)
+            } catch {
+                print("searchGroups: Что-то пошло не так c JSONDecoder!")
+            }
+        }
+    }
+
+    func joinToGroup(groupId: Int,
+                     completion: @escaping (Int) -> Void)
+    {
+        guard let url = prepareUrl(
+            methodName: "groups.join",
+            params: [
+                URLQueryItem(name: "group_id", value: String(groupId)),
+            ]
+        )
+        else { return }
+
+        vkRequest(url: url) { resp in
+            do {
+                let vkResp = try JSONDecoder()
+                    .decode(VKResponse<Int>.self, from: resp)
+                completion(vkResp.response)
+            } catch {
+                print("joinToGroup: Что-то пошло не так c JSONDecoder!")
+            }
+        }
+    }
+
+    func leaveGroup(groupId: Int,
+                    completion: @escaping (Int) -> Void)
+    {
+        guard let url = prepareUrl(
+            methodName: "groups.leave",
+            params: [
+                URLQueryItem(name: "group_id", value: String(groupId)),
+            ]
+        )
+        else { return }
+
+        vkRequest(url: url) { resp in
+            do {
+                let vkResp = try JSONDecoder()
+                    .decode(VKResponse<Int>.self, from: resp)
+                completion(vkResp.response)
+            } catch {
+                print("leaveGroup: Что-то пошло не так c JSONDecoder!")
+            }
+        }
+    }
 }
 

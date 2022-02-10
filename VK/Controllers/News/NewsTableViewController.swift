@@ -60,7 +60,7 @@ class NewsTableViewController: UITableViewController {
                 
                 if itemNews.sourceId > 0 {
                     // profile
-                    if let profile = resp.profileItems.profiles.first(where: { $0.id == abs(Int32(itemNews.sourceId)) }) {
+                    if let profile = resp.profileItems.profiles.first(where: { Int32($0.id) == abs(Int32(itemNews.sourceId)) }) {
                         authorTitle = "\(profile.lastName) \(profile.firstName)"
                         authorPhoto = profile.photoUrl
                     }

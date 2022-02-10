@@ -33,6 +33,10 @@
 		50B887CB2796C95D00C9A080 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B887CA2796C95D00C9A080 /* UIImageView.swift */; };
 		50B887CE2796CE6B00C9A080 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 50B887CD2796CE6B00C9A080 /* SwiftKeychainWrapper */; };
 		50D85A7127A91CFB004784F8 /* FirebaseVkUserAuthLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D85A7027A91CFB004784F8 /* FirebaseVkUserAuthLog.swift */; };
+		50E4621827B54B6B00B29884 /* FetchDataFriendPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4621727B54B6B00B29884 /* FetchDataFriendPromise.swift */; };
+		50E4621B27B54BF900B29884 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 50E4621A27B54BF900B29884 /* PromiseKit */; };
+		50E4622127B5509500B29884 /* ProviderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4622027B5509500B29884 /* ProviderDataService.swift */; };
+		50E4622327B551A600B29884 /* RealmFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4622227B551A600B29884 /* RealmFriend.swift */; };
 		840EADE72772F84500C81640 /* ImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADE62772F84500C81640 /* ImageCellView.swift */; };
 		840EADEA27730EAD00C81640 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADE927730EAD00C81640 /* Group.swift */; };
 		840EADEC27746D5300C81640 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADEB27746D5300C81640 /* GroupsTableViewController.swift */; };
@@ -111,6 +115,9 @@
 		50B887C82796BB2300C9A080 /* GroupsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsModel.swift; sourceTree = "<group>"; };
 		50B887CA2796C95D00C9A080 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		50D85A7027A91CFB004784F8 /* FirebaseVkUserAuthLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseVkUserAuthLog.swift; sourceTree = "<group>"; };
+		50E4621727B54B6B00B29884 /* FetchDataFriendPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataFriendPromise.swift; sourceTree = "<group>"; };
+		50E4622027B5509500B29884 /* ProviderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDataService.swift; sourceTree = "<group>"; };
+		50E4622227B551A600B29884 /* RealmFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFriend.swift; sourceTree = "<group>"; };
 		840EADE62772F84500C81640 /* ImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellView.swift; sourceTree = "<group>"; };
 		840EADE927730EAD00C81640 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		840EADEB27746D5300C81640 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupsTableViewController.swift; path = Models/GroupsTableViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B887CE2796CE6B00C9A080 /* SwiftKeychainWrapper in Frameworks */,
+				50E4621B27B54BF900B29884 /* PromiseKit in Frameworks */,
 				50416B0427A3D9B800F08568 /* FirebaseAuth in Frameworks */,
 				84C65A8E278B43D8004FB1EA /* Alamofire in Frameworks */,
 				84C65A8B278B4399004FB1EA /* RealmSwift in Frameworks */,
@@ -218,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				505B5C9E27B2BE1D002F2372 /* RealmGroup.swift */,
+				50E4622227B551A600B29884 /* RealmFriend.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -266,6 +275,14 @@
 				843FC2622771BE4F000A927F /* Friends */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		50E4621627B54AF900B29884 /* Promise */ = {
+			isa = PBXGroup;
+			children = (
+				50E4621727B54B6B00B29884 /* FetchDataFriendPromise.swift */,
+			);
+			path = Promise;
 			sourceTree = "<group>";
 		};
 		840EADF127748BDD00C81640 /* TableViewControllerCell */ = {
@@ -345,6 +362,7 @@
 			children = (
 				84559B3E276A53D8002EBC43 /* NetworkServices.swift */,
 				505B5CA027B2BEAF002F2372 /* RealmService.swift */,
+				50E4622027B5509500B29884 /* ProviderDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -382,13 +400,14 @@
 		84988B09272DA24C000129EE /* VK */ = {
 			isa = PBXGroup;
 			children = (
-				505B5C9427B2BCC3002F2372 /* Operations */,
 				84559B3527625D97002EBC43 /* App */,
 				84559B3B276A4C66002EBC43 /* API */,
 				84517030275A037F005C7948 /* Animations */,
 				50B887C52796842200C9A080 /* Controllers */,
 				84A8F0A1273D69C900CB4D56 /* Extension */,
 				50B887C4279683F600C9A080 /* Models */,
+				505B5C9427B2BCC3002F2372 /* Operations */,
+				50E4621627B54AF900B29884 /* Promise */,
 				50B887C2279683AC00C9A080 /* Storyboard */,
 				84988B13272DA24F000129EE /* Assets.xcassets */,
 				50416B0027A3D83100F08568 /* GoogleService-Info.plist */,
@@ -461,6 +480,7 @@
 				50B887CD2796CE6B00C9A080 /* SwiftKeychainWrapper */,
 				50416B0327A3D9B800F08568 /* FirebaseAuth */,
 				50416B0527A3D9B800F08568 /* FirebaseDatabase */,
+				50E4621A27B54BF900B29884 /* PromiseKit */,
 			);
 			productName = VK;
 			productReference = 84988B07272DA24C000129EE /* VK.app */;
@@ -541,6 +561,7 @@
 				84C65A8F278B4407004FB1EA /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				50B887CC2796CE6A00C9A080 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				50416B0227A3D9B800F08568 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				50E4621927B54BF900B29884 /* XCRemoteSwiftPackageReference "PromiseKit" */,
 			);
 			productRefGroup = 84988B08272DA24C000129EE /* Products */;
 			projectDirPath = "";
@@ -597,9 +618,11 @@
 				505B5C9627B2BCDF002F2372 /* AsyncOperation.swift in Sources */,
 				84C65A9B278B5434004FB1EA /* UITableView.swift in Sources */,
 				50B887CB2796C95D00C9A080 /* UIImageView.swift in Sources */,
+				50E4622327B551A600B29884 /* RealmFriend.swift in Sources */,
 				505B5C9C27B2BDD2002F2372 /* SaveDataGroupOperation.swift in Sources */,
 				84100F53278B5F4700E59990 /* PhotoFriends.swift in Sources */,
 				840EADEA27730EAD00C81640 /* Group.swift in Sources */,
+				50E4621827B54B6B00B29884 /* FetchDataFriendPromise.swift in Sources */,
 				502C2F1B27A93FE400525231 /* News.swift in Sources */,
 				505B5C9F27B2BE1D002F2372 /* RealmGroup.swift in Sources */,
 				840EADEE2774856900C81640 /* PhotoFriendsCollectionViewController.swift in Sources */,
@@ -616,6 +639,7 @@
 				84559B3D276A4CAF002EBC43 /* AuthViewController.swift in Sources */,
 				50D85A7127A91CFB004784F8 /* FirebaseVkUserAuthLog.swift in Sources */,
 				502C2F1F27A944D000525231 /* NewsTableViewController.swift in Sources */,
+				50E4622127B5509500B29884 /* ProviderDataService.swift in Sources */,
 				502C2F1727A93F8A00525231 /* PhotoViewCell.swift in Sources */,
 				505B5C9327B2A9CC002F2372 /* VKResponse.swift in Sources */,
 				84BB61A92771FDDE003868A6 /* Data+PrettyJSON.swift in Sources */,
@@ -1016,6 +1040,14 @@
 				minimumVersion = 4.0.1;
 			};
 		};
+		50E4621927B54BF900B29884 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.16.3;
+			};
+		};
 		84C65A86278B4368004FB1EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
@@ -1065,6 +1097,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 50B887CC2796CE6A00C9A080 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
+		};
+		50E4621A27B54BF900B29884 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50E4621927B54BF900B29884 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
 		};
 		84C65A87278B4368004FB1EA /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
