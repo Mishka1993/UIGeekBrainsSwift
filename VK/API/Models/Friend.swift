@@ -1,6 +1,10 @@
 import Foundation
 import RealmSwift
 
+struct FriendItems: Codable {
+    var items: [FriendDAO]
+}
+
 // MARK: - FriendDAO
 class FriendDAO: Object, Codable {
     @objc dynamic var id: Int = 0
@@ -72,4 +76,3 @@ extension FriendDAO {
         URL(string: photo50)
     }
 }
-
