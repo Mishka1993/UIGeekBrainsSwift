@@ -17,6 +17,7 @@ final class FriendsTableViewController: UITableViewController {
     private var friends: Results<FriendDAO>?
     private var friendsDB = FriendsDB()
     private var token: NotificationToken?
+    private var photoService: PhotoService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +66,13 @@ final class FriendsTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: friendsViewControllerIdentifier, for: indexPath) as? TableViewCell
         else { return UITableViewCell() }
         
-        let friend = friends?[indexPath.row]
-        cell.nameCell.text = "\(friend?.firstName ?? "") \(friend?.lastName ?? "")"
+        guard let friend = friends?[indexPath.row] else {return cell}
+        cell.nameCell.text = "\(friend.firstName ) \(friend.lastName )"
         cell.descripCell.text = ""
         
-        cell.imageURL = URL(string: friend?.photo50 ?? "")
+        cell.imageURL = URL(string: friend.photo50 )
         cell.avatarImage?.photoImage.sd_setImage(with: cell.imageURL, completed: nil)
+        cell.avatarImage.photoImage.image = photoService?.photo(atIndexpath: indexPath, byUrl: friend.photo50) ?? nil
         
         return cell
     }
