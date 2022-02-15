@@ -15,37 +15,38 @@ class GroupsTableViewController: UITableViewController {
     private var groups: Results<GroupDAO>?
     private var groupsDB = GroupsDB()
     private var token: NotificationToken?
+    private var photoService: PhotoService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: groupsViewControllerIdentifier)
         
-            networkServices.getGroups { [weak self] groups in
+        networkServices.getGroups { [weak self] groups in
             guard let self = self else { return }
-                self.groupsDB.save(groups)
-                self.groups = self.groupsDB.fetch()
-                self.token = self.groups?.observe(on: .main, { [weak self] changes in
+            self.groupsDB.save(groups)
+            self.groups = self.groupsDB.fetch()
+            self.token = self.groups?.observe(on: .main, { [weak self] changes in
+                
+                guard let self = self else { return }
+                
+                switch changes {
+                case .initial:
+                    self.tableView.reloadData()
                     
-                    guard let self = self else { return }
+                case .update(_, let deletions, let insertions, let modifications):
+                    self.tableView.beginUpdates()
+                    self.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                    self.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
+                    self.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                    self.tableView.endUpdates()
                     
-                    switch changes {
-                    case .initial:
-                        self.tableView.reloadData()
-                        
-                    case .update(_, let deletions, let insertions, let modifications):
-                        self.tableView.beginUpdates()
-                        self.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-                        self.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
-                        self.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-                        self.tableView.endUpdates()
-                        
-                    case .error(let error):
-                        print("\(error)")
-                    }
-                    
-                })
-            }
+                case .error(let error):
+                    print("\(error)")
+                }
+                
+            })
+        }
         
         self.tableView.tableFooterView = UIView()
     }
@@ -66,13 +67,13 @@ class GroupsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: groupsViewControllerIdentifier, for: indexPath) as? TableViewCell
         else { return UITableViewCell() }
-        let group = groups?[indexPath.row]
-        cell.nameCell.text = group?.name ?? ""
-        cell.descripCell.text = "\(separatedNumber(group?.membersCount ?? "0")) подписчиков"
+        guard let group = groups?[indexPath.row] else {return cell}
+        cell.nameCell.text = group.name
+        cell.descripCell.text = "\(separatedNumber(group.membersCount)) подписчиков"
         
-        cell.imageURL = URL(string: group?.photo50 ?? "")
+        cell.imageURL = URL(string: group.photo50)
         cell.avatarImage?.photoImage.sd_setImage(with: cell.imageURL, completed: nil)
-        
+        cell.avatarImage.photoImage.image = photoService?.photo(atIndexpath: indexPath, byUrl: group.photo50) ?? nil
         return cell
     }
     

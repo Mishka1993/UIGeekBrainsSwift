@@ -37,6 +37,7 @@
 		50E4621B27B54BF900B29884 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 50E4621A27B54BF900B29884 /* PromiseKit */; };
 		50E4622127B5509500B29884 /* ProviderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4622027B5509500B29884 /* ProviderDataService.swift */; };
 		50E4622327B551A600B29884 /* RealmFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4622227B551A600B29884 /* RealmFriend.swift */; };
+		50FE3F0627BBC97600B1704C /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE3F0527BBC97600B1704C /* PhotoService.swift */; };
 		840EADE72772F84500C81640 /* ImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADE62772F84500C81640 /* ImageCellView.swift */; };
 		840EADEA27730EAD00C81640 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADE927730EAD00C81640 /* Group.swift */; };
 		840EADEC27746D5300C81640 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EADEB27746D5300C81640 /* GroupsTableViewController.swift */; };
@@ -118,6 +119,7 @@
 		50E4621727B54B6B00B29884 /* FetchDataFriendPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataFriendPromise.swift; sourceTree = "<group>"; };
 		50E4622027B5509500B29884 /* ProviderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDataService.swift; sourceTree = "<group>"; };
 		50E4622227B551A600B29884 /* RealmFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFriend.swift; sourceTree = "<group>"; };
+		50FE3F0527BBC97600B1704C /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		840EADE62772F84500C81640 /* ImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellView.swift; sourceTree = "<group>"; };
 		840EADE927730EAD00C81640 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		840EADEB27746D5300C81640 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupsTableViewController.swift; path = Models/GroupsTableViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		50B887C4279683F600C9A080 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				50FE3F0427BBC95700B1704C /* CachingPhoto */,
 				505B5C9D27B2BE08002F2372 /* Realm */,
 				840EADE927730EAD00C81640 /* Group.swift */,
 				84100F52278B5F4700E59990 /* PhotoFriends.swift */,
@@ -283,6 +286,14 @@
 				50E4621727B54B6B00B29884 /* FetchDataFriendPromise.swift */,
 			);
 			path = Promise;
+			sourceTree = "<group>";
+		};
+		50FE3F0427BBC95700B1704C /* CachingPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				50FE3F0527BBC97600B1704C /* PhotoService.swift */,
+			);
+			path = CachingPhoto;
 			sourceTree = "<group>";
 		};
 		840EADF127748BDD00C81640 /* TableViewControllerCell */ = {
@@ -632,6 +643,7 @@
 				84559B3F276A53D8002EBC43 /* NetworkServices.swift in Sources */,
 				84378665275F993600B2A50D /* ProfileUserTableViewCell.swift in Sources */,
 				50B887C92796BB2300C9A080 /* GroupsModel.swift in Sources */,
+				50FE3F0627BBC97600B1704C /* PhotoService.swift in Sources */,
 				84559B3727625DD5002EBC43 /* Session.swift in Sources */,
 				502C2F0A27A93E7300525231 /* SectionHeader.swift in Sources */,
 				84517032275A03B2005C7948 /* CustomNavigationController.swift in Sources */,
