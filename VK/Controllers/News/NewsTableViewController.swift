@@ -15,7 +15,7 @@ class NewsTableViewController: UITableViewController {
         }
     }
     
-    private let networkService = NetworkServices()
+    private let networkService = NetworkServiceProxy(NetworkServices())
     private var pullControl = UIRefreshControl()
     
     override func viewDidLoad() {

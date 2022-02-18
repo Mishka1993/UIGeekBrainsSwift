@@ -9,8 +9,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class NetworkServices {
-    
+class NetworkServices: NetworkServiceProtocol {
     let url = "https://api.vk.com/method/"
     let versionApi = "5.131"
     let userId = Session.instance.userId
@@ -40,7 +39,7 @@ class NetworkServices {
         }
     }
     
-    func getPhotos(_ owner_id: Int, completionHandler: @escaping ([PhotoFriend]) -> Void) {
+    func getPhotos(ownerId owner_id: Int, completion completionHandler: @escaping ([PhotoFriend]) -> Void) {
         
         let url = url + "photos.getAll"
         
@@ -106,7 +105,7 @@ class NetworkServices {
         }
     }
     
-    func getNews(completion: @escaping (NewsResponseDTO) -> Void) {
+    func getNews(startFrom: String?, completion: @escaping (NewsResponseDTO) -> Void) {
         guard let url = prepareUrl(
             methodName: "newsfeed.get",
             params: [

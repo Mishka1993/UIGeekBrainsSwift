@@ -185,6 +185,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Друзья" id="s4C-lp-Mgd"/>
                     <connections>
+                        <outlet property="FriendTableView" destination="Nl8-hH-59i" id="RcW-wS-uuY"/>
                         <segue destination="go8-xD-QNX" kind="show" identifier="showPhotos" id="T0I-Zh-BMh"/>
                     </connections>
                 </tableViewController>

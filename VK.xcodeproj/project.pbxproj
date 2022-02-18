@@ -20,6 +20,8 @@
 		50416B0127A3D83100F08568 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50416B0027A3D83100F08568 /* GoogleService-Info.plist */; };
 		50416B0427A3D9B800F08568 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 50416B0327A3D9B800F08568 /* FirebaseAuth */; };
 		50416B0627A3D9B800F08568 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 50416B0527A3D9B800F08568 /* FirebaseDatabase */; };
+		5055CCA327BFAF8F00FF5313 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055CCA227BFAF8F00FF5313 /* NetworkServiceProtocol.swift */; };
+		5055CCA527BFB10000FF5313 /* NetworkServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055CCA427BFB10000FF5313 /* NetworkServiceProxy.swift */; };
 		505B5C9127B2A4DF002F2372 /* UIViewClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B5C9027B2A4DF002F2372 /* UIViewClip.swift */; };
 		505B5C9327B2A9CC002F2372 /* VKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B5C9227B2A9CC002F2372 /* VKResponse.swift */; };
 		505B5C9627B2BCDF002F2372 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B5C9527B2BCDF002F2372 /* AsyncOperation.swift */; };
@@ -104,6 +106,8 @@
 		502C2F1A27A93FE400525231 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		502C2F1E27A944D000525231 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		50416B0027A3D83100F08568 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5055CCA227BFAF8F00FF5313 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		5055CCA427BFB10000FF5313 /* NetworkServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProxy.swift; sourceTree = "<group>"; };
 		505B5C9027B2A4DF002F2372 /* UIViewClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewClip.swift; sourceTree = "<group>"; };
 		505B5C9227B2A9CC002F2372 /* VKResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKResponse.swift; sourceTree = "<group>"; };
 		505B5C9527B2BCDF002F2372 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 			children = (
 				84559B40276A5746002EBC43 /* Services */,
 				84559B3627625DD5002EBC43 /* Session.swift */,
+				5055CCA227BFAF8F00FF5313 /* NetworkServiceProtocol.swift */,
+				5055CCA427BFB10000FF5313 /* NetworkServiceProxy.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -624,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				505B5C9127B2A4DF002F2372 /* UIViewClip.swift in Sources */,
+				5055CCA527BFB10000FF5313 /* NetworkServiceProxy.swift in Sources */,
 				849AC3362742AB1500086F03 /* TableViewCell.swift in Sources */,
 				84517034275A040C005C7948 /* CustomInteractiveTransition.swift in Sources */,
 				505B5C9627B2BCDF002F2372 /* AsyncOperation.swift in Sources */,
@@ -662,6 +669,7 @@
 				505B5C9A27B2BD66002F2372 /* ParseDataGroupOperation.swift in Sources */,
 				84517038275A04D9005C7948 /* PopAnimate.swift in Sources */,
 				502C2F1327A93F6200525231 /* TextViewCell.swift in Sources */,
+				5055CCA327BFAF8F00FF5313 /* NetworkServiceProtocol.swift in Sources */,
 				5096B06827AA54EF00050962 /* PhotoGallery.swift in Sources */,
 				84BB61AC27720255003868A6 /* Friend.swift in Sources */,
 				505B5CA127B2BEAF002F2372 /* RealmService.swift in Sources */,

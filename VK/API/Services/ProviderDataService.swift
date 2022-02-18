@@ -10,7 +10,7 @@ import RealmSwift
 import PromiseKit
 
 class ProviderDataService {
-    let networkService = NetworkServices()
+    let networkService = NetworkServiceProxy(NetworkServices())
     let syncTimeout = 60.0
 
     func loadFriends() {
