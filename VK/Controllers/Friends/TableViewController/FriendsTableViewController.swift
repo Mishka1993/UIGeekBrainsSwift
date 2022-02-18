@@ -9,92 +9,134 @@ import UIKit
 import SDWebImage
 import RealmSwift
 
-final class FriendsTableViewController: UITableViewController {
-    
+struct Section {
+    let letter: String
+    let data: [RealmFriend]
+}
+
+class FriendsTableViewController: UITableViewController {
+    @IBOutlet var FriendTableView: UITableView!
     var friendsViewControllerIdentifier = "friendsViewControllerIdentifier"
-    
-    private var networkServices = NetworkServices()
-    private var friends: Results<FriendDAO>?
-    private var friendsDB = FriendsDB()
-    private var token: NotificationToken?
-    private var photoService: PhotoService?
-    
+    private var friendToken: NotificationToken?
+    private let realmProvider = ProviderDataService()
+    private var friend: Results<RealmFriend>?
+
+    private var sections = [Section]() {
+        didSet {
+            FriendTableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: friendsViewControllerIdentifier)
-        
-        networkServices.getFriends { [weak self] friends in
-            guard let self = self else { return }
-            self.friendsDB.save(friends)
-            self.friends = self.friendsDB.fetch()
-            print(self.friends! )
-            self.token = self.friends?.observe(on: .main, { [weak self] changes in
-                
-                guard let self = self else { return }
-                
-                switch changes {
-                case .initial:
-                    self.tableView.reloadData()
-                    
-                case .update(_, let deletions, let insertions, let modifications):
-                    self.tableView.beginUpdates()
-                    self.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-                    self.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
-                    self.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-                    self.tableView.endUpdates()
-                    
-                case .error(let error):
-                    print("\(error)")
-                }
-                
-            })
-        }
-        self.tableView.tableFooterView = UIView()
-    }
-    
-    
-    
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            
-            guard let friends = friends else { return 0 }
-            return friends.count
-        }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: friendsViewControllerIdentifier, for: indexPath) as? TableViewCell
-        else { return UITableViewCell() }
-        
-        guard let friend = friends?[indexPath.row] else {return cell}
-        cell.nameCell.text = "\(friend.firstName ) \(friend.lastName )"
-        cell.descripCell.text = ""
-        
-        cell.imageURL = URL(string: friend.photo50 )
-        cell.avatarImage?.photoImage.sd_setImage(with: cell.imageURL, completed: nil)
-        cell.avatarImage.photoImage.image = photoService?.photo(atIndexpath: indexPath, byUrl: friend.photo50) ?? nil
-        
-        return cell
+        friend = try? RealmService
+            .load(typeOf: RealmFriend.self)
     }
-    
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let key = view as? UITableViewHeaderFooterView {
-            key.contentView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
-            key.textLabel?.textColor = .tintColor
+
+    override func viewDidAppear(_: Bool) {
+        loadData()
+    }
+
+    public func loadData() {
+        realmProvider.loadFriends()
+        friendToken = friend?.observe { [weak self] changes in
+            switch changes {
+            case .initial:
+                self?.loadSection()
+            case .update:
+                self?.loadSection()
+            case let .error(error):
+                print(error)
+            }
         }
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showPhotos", sender: indexPath)
-        tableView.deselectRow(at: indexPath, animated: true)
+
+    private func getRowData(indexPath: IndexPath) -> RealmFriend {
+        let section = sections[indexPath.section]
+        return section.data[indexPath.row]
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? PhotoFriendsCollectionViewController {
-            let indexPath = sender as! IndexPath
-            destination.navigationItem.title = "Фото \(String(describing: friends![indexPath.row].firstName))"
-            destination.userId = friends?[indexPath.row].id
-        }
+
+    private func loadSection() {
+        guard let friend = friend else { return }
+        let groupedDictionary = Dictionary(grouping: friend, by: { String($0.lastName.prefix(1)) })
+        let keys = groupedDictionary.keys.sorted()
+        sections = keys.map { Section(letter: $0, data: groupedDictionary[$0]!) }
     }
 }
 
+extension FriendsTableViewController {
+    override func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sections[section].data.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: TableViewCell
+        if let resCell = tableView.dequeueReusableCell(withIdentifier: friendsViewControllerIdentifier, for: indexPath) as? TableViewCell {
+            cell = resCell
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: friendsViewControllerIdentifier, for: indexPath) as! TableViewCell
+        }
+
+        let section = sections[indexPath.section]
+        let sectionData = section.data[indexPath.row]
+
+        cell.nameCell?.text = "\(sectionData.lastName) \(sectionData.firstName)"
+        
+        // add shadow to image container
+        cell.avatarImage.photoImage.addShadow()
+
+        // clip image
+        cell.avatarImage.clip(borderColor: UIColor.orange.cgColor)
+        cell.imageURL = URL(string: sectionData.photo)
+        cell.avatarImage?.photoImage.sd_setImage(with: cell.imageURL, completed: nil)
+        
+        return cell
+    }
+
+    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(
+            withIdentifier: "showGallery",
+            sender: indexPath
+        )
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let galleryController = segue.destination as? PhotoFriendsCollectionViewController
+        else { return }
+        let indexPath = sender as! IndexPath
+        let rowData = getRowData(indexPath: indexPath)
+        galleryController.userId = rowData.userId
+    }
+
+    override func numberOfSections(in _: UITableView) -> Int {
+        return sections.count
+    }
+
+    override func sectionIndexTitles(for _: UITableView) -> [String]? {
+        return sections.map { $0.letter }
+    }
+
+    override func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].letter
+    }
+
+    override func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 25))
+        let label = UILabel(frame: CGRect(x: 10, y: 0, width: view.frame.size.width, height: 25))
+
+        label.text = sections[section].letter
+        label.backgroundColor = .white
+        label.isOpaque = true
+        label.textColor = .black
+        returnedView.addSubview(label)
+
+        return returnedView
+    }
+}
+
+extension FriendsTableViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_: UIGestureRecognizer, shouldRequireFailureOf _: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}

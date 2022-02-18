@@ -17,7 +17,7 @@ class PhotoFriendsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-            networkServices.getPhotos(userId) { [weak self] photosResponse in
+        networkServices.getPhotos(ownerId: userId) { [weak self] photosResponse in
             self?.photos = photosResponse
             self?.collectionView.reloadData()
         }
