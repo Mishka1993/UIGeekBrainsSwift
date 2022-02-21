@@ -24,3 +24,27 @@ extension UITableView {
   }
 }
 
+extension UITableViewController {
+    func configGroupCell(cell: inout UITableViewCell, group: RealmGroup) {
+        cell.textLabel?.backgroundColor = .white
+        cell.textLabel?.isOpaque = true
+
+        cell.textLabel?.text = group.name
+        cell.detailTextLabel?.text = group.text
+
+        cell.imageView?.image = UIImage(named: "placeholder")
+        cell.imageView?.lazyLoadingImage(link: group.photo, contentMode: .scaleAspectFit)
+    }
+
+    func configGroupCell(cell: inout UITableViewCell, group: GroupDAO) {
+        cell.textLabel?.backgroundColor = .white
+        cell.textLabel?.isOpaque = true
+
+        cell.textLabel?.text = group.name
+        cell.detailTextLabel?.text = group.description
+
+        cell.imageView?.image = UIImage(named: "placeholder")
+        cell.imageView?.lazyLoadingImage(link: group.photo50, contentMode: .scaleAspectFit)
+    }
+}
+

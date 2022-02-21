@@ -18,7 +18,7 @@ struct PhotoGallery: Codable {
     var ownerId: Double
     var text: String
     var items: [ImageItem]
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case albumId = "album_id"
@@ -42,7 +42,7 @@ struct ImageItem: Codable {
     var url: String
     var width: Double
     var height: Double
-
+    
     enum CodingKeys: String, CodingKey {
         case type
         case url
@@ -55,13 +55,13 @@ extension ImageItem {
     var photoUrl: URL? {
         URL(string: url)
     }
-
+    
     var image: UIImage? {
         guard let url = photoUrl else { return nil }
         let data = try? Data(contentsOf: url)
         return UIImage(data: data!)
     }
-
+    
     var aspectRatio: CGFloat { width / height }
 }
 

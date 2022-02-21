@@ -105,7 +105,7 @@ class NetworkServices: NetworkServiceProtocol {
         }
     }
     
-    func getNews(startFrom: String?, completion: @escaping (NewsResponseDTO) -> Void) {
+    func getNews(startFrom: String? = nil, completion: @escaping (NewsResponseDTO) -> Void) {
         guard let url = prepareUrl(
             methodName: "newsfeed.get",
             params: [
@@ -120,6 +120,7 @@ class NetworkServices: NetworkServiceProtocol {
         var newsList = NewsItems(items: [NewsPost]())
         var newsProfile = NewsProfiles(profiles: [FriendDAO]())
         var newsGroup = NewsGroups(groups: [GroupDAO]())
+        var nextFrom = ""
 
         vkRequest(url: url) { resp in
             DispatchQueue.global().async(group: dispGroup) {
@@ -132,6 +133,8 @@ class NetworkServices: NetworkServiceProtocol {
 
                     newsGroup = try JSONDecoder()
                         .decode(VKResponse<NewsGroups>.self, from: resp).response
+                    nextFrom = try JSONDecoder()
+                                            .decode(VKResponse<NewsNextFrom>.self, from: resp).response.nextFrom
 
                 } catch {
                     print("getNews: Что-то пошло не так c JSONDecoder!", error.localizedDescription)
@@ -142,7 +145,8 @@ class NetworkServices: NetworkServiceProtocol {
                 completion(NewsResponseDTO(
                     newsItems: newsList,
                     groupItems: newsGroup,
-                    profileItems: newsProfile
+                    profileItems: newsProfile,
+                    nextFrom: nextFrom
                 ))
             }
         }

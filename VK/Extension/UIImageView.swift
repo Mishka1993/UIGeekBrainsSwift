@@ -11,15 +11,7 @@ import RealmSwift
 
 extension UIImageView {
     
-    func load(url: URL, completion: @escaping (UIImage)->()) {
-        
-        if let data = try? Data(contentsOf: url) {
-            if let image = UIImage(data: data){
-                self.image = image
-                completion(image)
-            }
-        }
-    }
+    
     func resizeAndSpringAnimate() {
         UIView.animate(
             withDuration: 0.2,

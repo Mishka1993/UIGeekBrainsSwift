@@ -22,6 +22,9 @@
 		50416B0627A3D9B800F08568 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 50416B0527A3D9B800F08568 /* FirebaseDatabase */; };
 		5055CCA327BFAF8F00FF5313 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055CCA227BFAF8F00FF5313 /* NetworkServiceProtocol.swift */; };
 		5055CCA527BFB10000FF5313 /* NetworkServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055CCA427BFB10000FF5313 /* NetworkServiceProxy.swift */; };
+		5055CCA727C384A900FF5313 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055CCA627C384A900FF5313 /* String+Ext.swift */; };
+		5055CCA927C3851C00FF5313 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055CCA827C3851C00FF5313 /* UIColor+Ext.swift */; };
+		5055CCAB27C3853800FF5313 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055CCAA27C3853800FF5313 /* UIImageView+Ext.swift */; };
 		505B5C9127B2A4DF002F2372 /* UIViewClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B5C9027B2A4DF002F2372 /* UIViewClip.swift */; };
 		505B5C9327B2A9CC002F2372 /* VKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B5C9227B2A9CC002F2372 /* VKResponse.swift */; };
 		505B5C9627B2BCDF002F2372 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B5C9527B2BCDF002F2372 /* AsyncOperation.swift */; };
@@ -32,7 +35,6 @@
 		505B5CA127B2BEAF002F2372 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B5CA027B2BEAF002F2372 /* RealmService.swift */; };
 		5096B06827AA54EF00050962 /* PhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096B06727AA54EF00050962 /* PhotoGallery.swift */; };
 		50B887C92796BB2300C9A080 /* GroupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B887C82796BB2300C9A080 /* GroupsModel.swift */; };
-		50B887CB2796C95D00C9A080 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B887CA2796C95D00C9A080 /* UIImageView.swift */; };
 		50B887CE2796CE6B00C9A080 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 50B887CD2796CE6B00C9A080 /* SwiftKeychainWrapper */; };
 		50D85A7127A91CFB004784F8 /* FirebaseVkUserAuthLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D85A7027A91CFB004784F8 /* FirebaseVkUserAuthLog.swift */; };
 		50E4621827B54B6B00B29884 /* FetchDataFriendPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4621727B54B6B00B29884 /* FetchDataFriendPromise.swift */; };
@@ -108,6 +110,9 @@
 		50416B0027A3D83100F08568 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5055CCA227BFAF8F00FF5313 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		5055CCA427BFB10000FF5313 /* NetworkServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProxy.swift; sourceTree = "<group>"; };
+		5055CCA627C384A900FF5313 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		5055CCA827C3851C00FF5313 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		5055CCAA27C3853800FF5313 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		505B5C9027B2A4DF002F2372 /* UIViewClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewClip.swift; sourceTree = "<group>"; };
 		505B5C9227B2A9CC002F2372 /* VKResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKResponse.swift; sourceTree = "<group>"; };
 		505B5C9527B2BCDF002F2372 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
@@ -118,7 +123,6 @@
 		505B5CA027B2BEAF002F2372 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		5096B06727AA54EF00050962 /* PhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGallery.swift; sourceTree = "<group>"; };
 		50B887C82796BB2300C9A080 /* GroupsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsModel.swift; sourceTree = "<group>"; };
-		50B887CA2796C95D00C9A080 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		50D85A7027A91CFB004784F8 /* FirebaseVkUserAuthLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseVkUserAuthLog.swift; sourceTree = "<group>"; };
 		50E4621727B54B6B00B29884 /* FetchDataFriendPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataFriendPromise.swift; sourceTree = "<group>"; };
 		50E4622027B5509500B29884 /* ProviderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDataService.swift; sourceTree = "<group>"; };
@@ -466,9 +470,11 @@
 				84C65A9A278B5434004FB1EA /* UITableView.swift */,
 				84813953272DB7E400BF4056 /* TextField.swift */,
 				84BB61A82771FDDE003868A6 /* Data+PrettyJSON.swift */,
-				50B887CA2796C95D00C9A080 /* UIImageView.swift */,
 				505B5C9027B2A4DF002F2372 /* UIViewClip.swift */,
 				505B5C9227B2A9CC002F2372 /* VKResponse.swift */,
+				5055CCA627C384A900FF5313 /* String+Ext.swift */,
+				5055CCA827C3851C00FF5313 /* UIColor+Ext.swift */,
+				5055CCAA27C3853800FF5313 /* UIImageView+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -635,8 +641,9 @@
 				84517034275A040C005C7948 /* CustomInteractiveTransition.swift in Sources */,
 				505B5C9627B2BCDF002F2372 /* AsyncOperation.swift in Sources */,
 				84C65A9B278B5434004FB1EA /* UITableView.swift in Sources */,
-				50B887CB2796C95D00C9A080 /* UIImageView.swift in Sources */,
+				5055CCA927C3851C00FF5313 /* UIColor+Ext.swift in Sources */,
 				50E4622327B551A600B29884 /* RealmFriend.swift in Sources */,
+				5055CCAB27C3853800FF5313 /* UIImageView+Ext.swift in Sources */,
 				505B5C9C27B2BDD2002F2372 /* SaveDataGroupOperation.swift in Sources */,
 				84100F53278B5F4700E59990 /* PhotoFriends.swift in Sources */,
 				840EADEA27730EAD00C81640 /* Group.swift in Sources */,
@@ -651,6 +658,7 @@
 				84378665275F993600B2A50D /* ProfileUserTableViewCell.swift in Sources */,
 				50B887C92796BB2300C9A080 /* GroupsModel.swift in Sources */,
 				50FE3F0627BBC97600B1704C /* PhotoService.swift in Sources */,
+				5055CCA727C384A900FF5313 /* String+Ext.swift in Sources */,
 				84559B3727625DD5002EBC43 /* Session.swift in Sources */,
 				502C2F0A27A93E7300525231 /* SectionHeader.swift in Sources */,
 				84517032275A03B2005C7948 /* CustomNavigationController.swift in Sources */,
