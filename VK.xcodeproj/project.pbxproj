@@ -37,6 +37,9 @@
 		50B887C92796BB2300C9A080 /* GroupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B887C82796BB2300C9A080 /* GroupsModel.swift */; };
 		50B887CE2796CE6B00C9A080 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 50B887CD2796CE6B00C9A080 /* SwiftKeychainWrapper */; };
 		50D85A7127A91CFB004784F8 /* FirebaseVkUserAuthLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D85A7027A91CFB004784F8 /* FirebaseVkUserAuthLog.swift */; };
+		50E1AA6427F1BA1300256B6D /* VkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1AA6327F1BA1300256B6D /* VkAdapter.swift */; };
+		50E1AA6627F1BB2B00256B6D /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1AA6527F1BB2B00256B6D /* AppSettings.swift */; };
+		50E1AA6827F1C5C300256B6D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1AA6727F1C5C200256B6D /* Response.swift */; };
 		50E4621827B54B6B00B29884 /* FetchDataFriendPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4621727B54B6B00B29884 /* FetchDataFriendPromise.swift */; };
 		50E4621B27B54BF900B29884 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 50E4621A27B54BF900B29884 /* PromiseKit */; };
 		50E4622127B5509500B29884 /* ProviderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4622027B5509500B29884 /* ProviderDataService.swift */; };
@@ -124,6 +127,9 @@
 		5096B06727AA54EF00050962 /* PhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGallery.swift; sourceTree = "<group>"; };
 		50B887C82796BB2300C9A080 /* GroupsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsModel.swift; sourceTree = "<group>"; };
 		50D85A7027A91CFB004784F8 /* FirebaseVkUserAuthLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseVkUserAuthLog.swift; sourceTree = "<group>"; };
+		50E1AA6327F1BA1300256B6D /* VkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkAdapter.swift; sourceTree = "<group>"; };
+		50E1AA6527F1BB2B00256B6D /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		50E1AA6727F1C5C200256B6D /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		50E4621727B54B6B00B29884 /* FetchDataFriendPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataFriendPromise.swift; sourceTree = "<group>"; };
 		50E4622027B5509500B29884 /* ProviderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDataService.swift; sourceTree = "<group>"; };
 		50E4622227B551A600B29884 /* RealmFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFriend.swift; sourceTree = "<group>"; };
@@ -271,6 +277,7 @@
 				84BB61AB27720255003868A6 /* Friend.swift */,
 				502C2F1A27A93FE400525231 /* News.swift */,
 				5096B06727AA54EF00050962 /* PhotoGallery.swift */,
+				50E1AA6727F1C5C200256B6D /* Response.swift */,
 			);
 			name = Models;
 			path = API/Models;
@@ -286,6 +293,14 @@
 				843FC2622771BE4F000A927F /* Friends */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		50E1AA6227F1B9EB00256B6D /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				50E1AA6327F1BA1300256B6D /* VkAdapter.swift */,
+			);
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 		50E4621627B54AF900B29884 /* Promise */ = {
@@ -401,6 +416,7 @@
 		84988AFE272DA24C000129EE = {
 			isa = PBXGroup;
 			children = (
+				50E1AA6527F1BB2B00256B6D /* AppSettings.swift */,
 				84988B09272DA24C000129EE /* VK */,
 				84988B20272DA24F000129EE /* VKTests */,
 				84988B2A272DA24F000129EE /* VKUITests */,
@@ -421,6 +437,7 @@
 		84988B09272DA24C000129EE /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				50E1AA6227F1B9EB00256B6D /* Adapter */,
 				84559B3527625D97002EBC43 /* App */,
 				84559B3B276A4C66002EBC43 /* API */,
 				84517030275A037F005C7948 /* Animations */,
@@ -641,6 +658,7 @@
 				84517034275A040C005C7948 /* CustomInteractiveTransition.swift in Sources */,
 				505B5C9627B2BCDF002F2372 /* AsyncOperation.swift in Sources */,
 				84C65A9B278B5434004FB1EA /* UITableView.swift in Sources */,
+				50E1AA6427F1BA1300256B6D /* VkAdapter.swift in Sources */,
 				5055CCA927C3851C00FF5313 /* UIColor+Ext.swift in Sources */,
 				50E4622327B551A600B29884 /* RealmFriend.swift in Sources */,
 				5055CCAB27C3853800FF5313 /* UIImageView+Ext.swift in Sources */,
@@ -660,12 +678,14 @@
 				50FE3F0627BBC97600B1704C /* PhotoService.swift in Sources */,
 				5055CCA727C384A900FF5313 /* String+Ext.swift in Sources */,
 				84559B3727625DD5002EBC43 /* Session.swift in Sources */,
+				50E1AA6627F1BB2B00256B6D /* AppSettings.swift in Sources */,
 				502C2F0A27A93E7300525231 /* SectionHeader.swift in Sources */,
 				84517032275A03B2005C7948 /* CustomNavigationController.swift in Sources */,
 				840EADF427748C2A00C81640 /* PhotoFriendCollectionViewCell.swift in Sources */,
 				84559B3D276A4CAF002EBC43 /* AuthViewController.swift in Sources */,
 				50D85A7127A91CFB004784F8 /* FirebaseVkUserAuthLog.swift in Sources */,
 				502C2F1F27A944D000525231 /* NewsTableViewController.swift in Sources */,
+				50E1AA6827F1C5C300256B6D /* Response.swift in Sources */,
 				50E4622127B5509500B29884 /* ProviderDataService.swift in Sources */,
 				502C2F1727A93F8A00525231 /* PhotoViewCell.swift in Sources */,
 				505B5C9327B2A9CC002F2372 /* VKResponse.swift in Sources */,
