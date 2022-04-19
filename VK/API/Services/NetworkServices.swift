@@ -8,6 +8,9 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import PromiseKit
+import RealmSwift
+
 
 class NetworkServices: NetworkServiceProtocol {
     let url = "https://api.vk.com/method/"
@@ -105,7 +108,7 @@ class NetworkServices: NetworkServiceProtocol {
         }
     }
     
-    func getNews(startFrom: String?, completion: @escaping (NewsResponseDTO) -> Void) {
+    func getNews(startFrom: String? = nil, completion: @escaping (NewsResponseDTO) -> Void) {
         guard let url = prepareUrl(
             methodName: "newsfeed.get",
             params: [
@@ -120,6 +123,7 @@ class NetworkServices: NetworkServiceProtocol {
         var newsList = NewsItems(items: [NewsPost]())
         var newsProfile = NewsProfiles(profiles: [FriendDAO]())
         var newsGroup = NewsGroups(groups: [GroupDAO]())
+        var nextFrom = ""
 
         vkRequest(url: url) { resp in
             DispatchQueue.global().async(group: dispGroup) {
@@ -132,6 +136,8 @@ class NetworkServices: NetworkServiceProtocol {
 
                     newsGroup = try JSONDecoder()
                         .decode(VKResponse<NewsGroups>.self, from: resp).response
+                    nextFrom = try JSONDecoder()
+                                            .decode(VKResponse<NewsNextFrom>.self, from: resp).response.nextFrom
 
                 } catch {
                     print("getNews: Что-то пошло не так c JSONDecoder!", error.localizedDescription)
@@ -142,7 +148,8 @@ class NetworkServices: NetworkServiceProtocol {
                 completion(NewsResponseDTO(
                     newsItems: newsList,
                     groupItems: newsGroup,
-                    profileItems: newsProfile
+                    profileItems: newsProfile,
+                    nextFrom: nextFrom
                 ))
             }
         }
@@ -275,3 +282,80 @@ class NetworkServices: NetworkServiceProtocol {
     }
 }
 
+extension NetworkServices {
+    private func apiRequest(request: DataRequest) -> Promise<Data> {
+        return Promise<Data> { resolver in
+            request
+                .resume()
+                .validate(statusCode: 200..<201)
+                .validate(contentType: ["application/json"])
+                .responseData {
+                    response in
+                    switch response.result {
+                    case .success(let value):
+                        resolver.fulfill(value)
+                    case .failure(let error):
+                        resolver.reject(error)
+                    }
+                }
+        }
+    }
+    
+    private func parseUsersResponse(data: Data) -> Promise<[FriendDAO]> {
+        return Promise<[FriendDAO]> { resolver in
+            do {
+                let value = try JSONDecoder().decode(Response<FriendDAO>.self, from: data)
+                resolver.fulfill(value.list)
+            } catch {
+                resolver.reject(error)
+            }
+        }
+    }
+
+    private func realmInsertUser(data: [FriendDAO], dropBefore: Bool) -> Promise<Void> {
+        return Promise<Void> { resolver in
+            do {
+                let realm = try Realm(configuration: RealmService.deleteIfMigration)
+                realm.beginWrite()
+                if dropBefore {
+                    realm.delete([FriendDAO](realm.objects(FriendDAO.self)))
+                }
+                realm.add(data, update: .all)
+                try realm.commitWrite()
+                resolver.fulfill(())
+            } catch {
+                resolver.reject(error)
+            }
+        }
+    }
+    
+    func getFriendsByPromise(fieldList: [String] = [],
+                             offset: Int = 0)
+    {
+        
+        var fields = Set<String>(["photo_50"])
+        fields.formUnion(fieldList)
+        let parameters: Parameters = [
+            "access_token": Session.instance.token,
+            "v": versionApi,
+            "offset": String(offset),
+            "fields": fields.joined(separator: ",")
+        ]
+        let request = AF.request(
+            url + "friends.get",
+            method: .get,
+            parameters: parameters)
+
+        Promise { result in
+            DispatchQueue.global().async {
+                self.apiRequest(request: request).pipe(to: result.resolve)
+            }
+        }.then { data in
+            self.parseUsersResponse(data: data)
+        }.then { users in
+            self.realmInsertUser(data: users, dropBefore: true)
+        }.catch { error in
+            print("\(error)")
+        }
+    }
+}
